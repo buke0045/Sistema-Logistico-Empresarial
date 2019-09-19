@@ -1,16 +1,32 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
+        
         <title>Login</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
+        <h:outputStylesheet library="css" name="loginStyle.css"  />
     </h:head>
     <h:body>
         <div id="wrapper">
             <div id="content">
+                <div id="encabezado"></div>
                 <div id="cuadro_login">
-                    
-                    
+                    <h1>Ingrese sus datos</h1>        
+                    <br></br>
+                    <h:form>
+                        
+                        <h:inputText id="username" class="form-control" pt:placeholder="Username" required="true" requiredMessage="* Campo Obligatorio *"/> 
+                        <p class="text-danger"><h:message for="username"/></p> 
+                        
+                        <h:inputText id="password" class="form-control" pt:placeholder="Password" required="true" requiredMessage="* Campo Obligatorio *" />
+                        <p class="text-danger"><h:message for="password"/></p>
+                        <br></br>
+                        <h:commandButton value="Ingresar"  styleClass="login-button" action="#"/>
+                    </h:form>
                 </div>
                 
             </div>
