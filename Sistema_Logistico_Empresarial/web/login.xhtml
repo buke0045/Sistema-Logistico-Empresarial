@@ -13,19 +13,24 @@
     <h:body>
         <div id="wrapper">
             <div id="content">
-                <div id="encabezado"></div>
+                
+                <div id="encabezado">
+                    <h:messages globalOnly="true" />
+                </div>
+                
                 <div id="cuadro_login">
                     <h1>Ingrese sus datos</h1>        
                     <br></br>
                     <h:form>
                         
-                        <h:inputText id="username" class="form-control" pt:placeholder="Username" required="true" requiredMessage="* Campo Obligatorio *"/> 
+                        <h:inputText id="username" class="form-control" pt:placeholder="Username" required="true" requiredMessage="* Campo Obligatorio *" value="#{user.username}"/> 
                         <p class="text-danger"><h:message for="username"/></p> 
                         
-                        <h:inputText id="password" class="form-control" pt:placeholder="Password" required="true" requiredMessage="* Campo Obligatorio *" />
+                        <h:inputSecret id="password" class="form-control" pt:placeholder="Password" required="true" requiredMessage="* Campo Obligatorio *" value="#{user.password}" />
                         <p class="text-danger"><h:message for="password"/></p>
                         <br></br>
-                        <h:commandButton value="Ingresar"  styleClass="login-button" action="#"/>
+                        <h:commandButton value="Ingresar"  styleClass="login-button" action="#{userController.addUser(user)}"/>
+                       
                     </h:form>
                 </div>
                 

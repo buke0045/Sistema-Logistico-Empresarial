@@ -18,13 +18,13 @@ import javax.sql.DataSource;
  * @author eddie
  */
 public class Conexion{
-        private static usersDAO instance;
+        private static UserDAO instance;
 	private DataSource dataSource;
-	private String jndiName = "java:app/unadbconexion";
+	private String jndiName = "java:app/sistema_logistico_empresarial";
 	
-	public static usersDAO getInstance() throws Exception {
+	public static UserDAO getInstance() throws Exception {
 		if (instance == null) {
-			instance = new usersDAO();
+			instance = new UserDAO();
 		}
 		
 		return instance;
