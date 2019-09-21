@@ -19,6 +19,7 @@ import javax.sql.DataSource;
  */
 public class Conexion{
         private static UserDAO instance;
+        private static CategoriasDAO instanceC;
 	private DataSource dataSource;
 	private String jndiName = "java:app/sistema_logistico_empresarial";
 	
@@ -30,6 +31,14 @@ public class Conexion{
 		return instance;
 	}
 	
+        public static CategoriasDAO getInstanceC() throws Exception {
+		if (instanceC == null) {
+			instanceC = new CategoriasDAO();
+		}
+		
+		return instanceC;
+	}
+        
 	public Conexion() throws Exception {		
 		dataSource = getDataSource();
 	}

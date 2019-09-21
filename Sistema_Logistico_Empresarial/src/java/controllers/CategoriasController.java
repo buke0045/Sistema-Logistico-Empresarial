@@ -33,7 +33,7 @@ public class CategoriasController {
     public CategoriasController() throws Exception {
             Categs = new ArrayList<>();
 
-            CategsDbUtil = CategoriasDAO.getInstance(); // ERROR-> FALTA TERMINAR DE DEFINIR SU DAO
+            CategsDbUtil = CategoriasDAO.getInstanceC();
     }
 
     public List<Categorias> getStudents() {
@@ -73,12 +73,12 @@ public class CategoriasController {
             return "list-students?faces-redirect=true";
     }
 
-    public String loadCategory(int categCodigo) {
+/*    public String loadCategory(int categCodigo) {
 
             logger.info("loading category: " + categCodigo);
 
             try {
-                    Categorias categs = CategsDbUtil.getCategorias(categCodigo); // ERROR-> FALTA TERMINAR DE DEFINIR SU DAO
+                    Categorias categs = CategsDbUtil.getCategorias(categCodigo);
                     ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();		
                     Map<String, Object> requestMap = externalContext.getRequestMap();
                     requestMap.put("category", categs);	
@@ -92,7 +92,7 @@ public class CategoriasController {
 
             return "update-student-form.xhtml";
     }	
-
+*/
     public String updateStudent(Categorias categ) {
             logger.info("updating category: " + categ);		
             try {			
