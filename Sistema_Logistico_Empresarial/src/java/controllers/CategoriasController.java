@@ -42,7 +42,7 @@ public class CategoriasController {
 
     public void loadStudents() {
 
-            logger.info("Loading students");
+            logger.info("Loading categories");
 
             Categs.clear();
 
@@ -51,20 +51,20 @@ public class CategoriasController {
                     Categs = CategsDbUtil.getCategorias();
 
             } catch (Exception exc) {			
-                    logger.log(Level.SEVERE, "Error loading students", exc);		
+                    logger.log(Level.SEVERE, "Error loading categories", exc);		
                     addErrorMessage(exc);
             }
     }
 
     public String addStudent(Categorias categs) {
 
-            logger.info("Adding student: " + categs);
+            logger.info("Adding categories: " + categs);
 
             try {
                     CategsDbUtil.addCategoria(categs);
 
             } catch (Exception exc) {
-                    logger.log(Level.SEVERE, "Error adding students", exc);			
+                    logger.log(Level.SEVERE, "Error adding categories", exc);			
                     addErrorMessage(exc);
 
                     return null;
@@ -81,10 +81,10 @@ public class CategoriasController {
                     Categorias categs = CategsDbUtil.getCategorias(categCodigo); // ERROR-> FALTA TERMINAR DE DEFINIR SU DAO
                     ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();		
                     Map<String, Object> requestMap = externalContext.getRequestMap();
-                    requestMap.put("student", categs);	
+                    requestMap.put("category", categs);	
 
             } catch (Exception exc) {
-                    logger.log(Level.SEVERE, "Error loading student id:" + categCodigo, exc);
+                    logger.log(Level.SEVERE, "Error loading category id:" + categCodigo, exc);
                     addErrorMessage(exc);
 
                     return null;
@@ -94,7 +94,7 @@ public class CategoriasController {
     }	
 
     public String updateStudent(Categorias categ) {
-            logger.info("updating student: " + categ);		
+            logger.info("updating category: " + categ);		
             try {			
                     CategsDbUtil.updateCategoria(categ);
 
@@ -110,7 +110,7 @@ public class CategoriasController {
 
     public String deleteCategoria(int categCodigo) {
 
-            logger.info("Deleting categorias codigo: " + categCodigo);
+            logger.info("Deleting category code: " + categCodigo);
 
             try {
                     CategsDbUtil.deleteCategoria(categCodigo);
