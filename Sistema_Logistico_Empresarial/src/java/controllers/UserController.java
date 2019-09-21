@@ -12,6 +12,10 @@ import javax.faces.context.FacesContext;
 import models.User;
 import models.UserDAO;
 
+// VER USERS EXISTENTES(acomodar a un mostrar sin afectar validacion de login),
+// AGREGAR(probar),
+// MODIFICAR(falta),
+// ELIMINAR(falta)
 
 @ManagedBean
 @SessionScoped

@@ -4,15 +4,15 @@ package models;
 import javax.faces.bean.ManagedBean;
 
 @ManagedBean
-public class Categoria {
-    private String codigo;
+public class Categorias {
+    private int codigo;
     private String descripcion;
     private String bloque;
     
-    public Categoria(){
+    public Categorias(){
     
     }
-    public Categoria(String codigo, String descripcion, String bloque){
+    public Categorias(int codigo, String descripcion, String bloque){
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.bloque = bloque;
@@ -21,14 +21,14 @@ public class Categoria {
     /**
      * @return the codigo
      */
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
     /**
      * @param codigo the codigo to set
      */
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 

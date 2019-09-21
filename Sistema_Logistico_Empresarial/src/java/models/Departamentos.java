@@ -5,7 +5,7 @@ import javax.faces.bean.ManagedBean;
 
 @ManagedBean
 public class Departamentos {
-    private String codigo;
+    private int codigo;
     private String nombre;
     private String encargado;
     private String ubicacion;
@@ -15,7 +15,7 @@ public class Departamentos {
     public Departamentos(){
     
     }
-    public Departamentos(String codigo, String nombre, String encargado, String ubicacion, int telefono, String correo){
+    public Departamentos(int codigo, String nombre, String encargado, String ubicacion, int telefono, String correo){
         this.codigo = codigo;
         this.nombre = nombre;
         this.encargado = encargado;
@@ -27,14 +27,14 @@ public class Departamentos {
     /**
      * @return the codigo
      */
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
     /**
      * @param codigo the codigo to set
      */
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 

@@ -11,11 +11,6 @@ public class UserDAO extends Conexion{
         super();
     }
     
-// VER USERS EXISTENTES(acomodar a un mostrar sin afectar validacion de login),
-// AGREGAR(probar),
-// MODIFICAR(falta),
-// ELIMINAR(falta)
-    
     public void addUser(User pUser) throws Exception {
 
 	Connection myConn = null;

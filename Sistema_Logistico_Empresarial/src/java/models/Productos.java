@@ -6,7 +6,7 @@ import javax.faces.bean.ManagedBean;
 
 @ManagedBean
 public class Productos {
-    private String codigo;
+    private int codigo;
     private String descripcion;
     private String categoria;
     private int ExistAct;
@@ -17,7 +17,7 @@ public class Productos {
     public Productos(){
     
     }
-    public Productos(String codigo, String descripcion, String categoria, int ExistAct, int ExistMin, int ExistMax, File imagen){
+    public Productos(int codigo, String descripcion, String categoria, int ExistAct, int ExistMin, int ExistMax, File imagen){
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.categoria = categoria;
@@ -30,14 +30,14 @@ public class Productos {
     /**
      * @return the codigo
      */
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
     /**
      * @param codigo the codigo to set
      */
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
