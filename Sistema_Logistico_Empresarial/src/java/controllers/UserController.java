@@ -40,7 +40,7 @@ public class UserController {
 			User theUser = loginDbUtil.getUser(pUsername, pPassword);	
 			if(pUsername.equals(theUser.getUsername()) && pPassword.equals(theUser.getPassword())){
                            
-                            return "congra.xhtml";
+                            return "principal.xhtml";
                             
                         }
 		} catch (Exception exc) {
