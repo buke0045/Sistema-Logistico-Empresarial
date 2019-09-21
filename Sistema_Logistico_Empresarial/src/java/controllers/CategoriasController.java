@@ -36,11 +36,11 @@ public class CategoriasController {
             CategsDbUtil = CategoriasDAO.getInstanceC();
     }
 
-    public List<Categorias> getStudents() {
+    public List<Categorias> getCategories() {
             return Categs;
     }
 
-    public void loadStudents() {
+    public void loadCategories() {
 
             logger.info("Loading categories");
 
@@ -56,7 +56,7 @@ public class CategoriasController {
             }
     }
 
-    public String addStudent(Categorias categs) {
+    public String addCategory(Categorias categs) {
 
             logger.info("Adding categories: " + categs);
 
@@ -70,31 +70,31 @@ public class CategoriasController {
                     return null;
             }
 
-            return "list-students?faces-redirect=true";
+            return "list-categories?faces-redirect=true";
     }
 
-/*    public String loadCategory(int categCodigo) {
+    public String loadCategory(int categCodigo) {
 
             logger.info("loading category: " + categCodigo);
 
             try {
-                    Categorias categs = CategsDbUtil.getCategorias(categCodigo);
+                    Categorias categs = CategsDbUtil.getCategory(categCodigo);
                     ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();		
                     Map<String, Object> requestMap = externalContext.getRequestMap();
-                    requestMap.put("category", categs);	
+                    requestMap.put("categorias", categs);	
 
             } catch (Exception exc) {
-                    logger.log(Level.SEVERE, "Error loading category id:" + categCodigo, exc);
+                    logger.log(Level.SEVERE, "Error loading category codigo:" + categCodigo, exc);
                     addErrorMessage(exc);
 
                     return null;
             }
 
-            return "update-student-form.xhtml";
+            return "update-category-form.xhtml";
     }	
-*/
-    public String updateStudent(Categorias categ) {
-            logger.info("updating category: " + categ);		
+
+    public String updateCategory(Categorias categ) {
+            logger.info("updating categoria: " + categ);		
             try {			
                     CategsDbUtil.updateCategoria(categ);
 
@@ -105,10 +105,10 @@ public class CategoriasController {
                     return null;
             }
 
-            return "list-students?faces-redirect=true";		
+            return "list-categories?faces-redirect=true";		
     }
 
-    public String deleteCategoria(int categCodigo) {
+    public String deleteCategory(int categCodigo) {
 
             logger.info("Deleting category code: " + categCodigo);
 
@@ -122,7 +122,7 @@ public class CategoriasController {
                     return null;
             }
 
-            return "list-students";	
+            return "list-categories";	
     }	
 
     private void addErrorMessage(Exception exc) {

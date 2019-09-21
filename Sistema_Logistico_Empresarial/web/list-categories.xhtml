@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+<f:metadata>
+  <f:event type="preRenderView" listener="#{categoriasController.loadCategories()}"/>
+</f:metadata>
+    
+    <h:head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+        <title>Categorias</title>
+        
+        <h:outputStylesheet library="css" name="style.css"  />
+    </h:head>
+    <h:body>
+        Welcome a Admin de Categorias
+
+        
+        <div id="wrapper">
+            <div id="header">
+                    <h2>Universidad Nacional</h2>
+            </div>	
+
+            <div id="container">
+
+		<div id="content">
+		
+		    <h:messages globalOnly="true" />
+		
+                    <h:button value="Agregar" styleClass="add-categories-button" outcome="add-category-form"/>			
+
+                    <h:form>
+
+                    <h:dataTable value="#{categoriasController.categories}" var="tempCategorias"
+                            styleClass="demo-table" 
+                            headerClass="demo-table-header"
+                            rowClasses="demo-table-odd-row,demo-table-even-row">
+
+                            <h:column>
+                                    <!-- the column header -->
+                                    <f:facet name="header">Codigo</f:facet>
+
+                                    <!--  the value for each row -->
+                                    #{tempCategorias.codigo}
+                            </h:column>
+
+                            <h:column>
+                                    <!-- the column header -->
+                                    <f:facet name="header">Descripcion</f:facet>
+
+                                    <!--  the value for each row -->
+                                    #{tempCategorias.descripcion}
+                            </h:column>
+
+                            <h:column>
+                                    <!-- the column header -->
+                                    <f:facet name="header">Bloque</f:facet>
+
+                                    <!--  the value for each row -->
+                                    #{tempCategorias.bloque}
+                            </h:column>
+
+                            <h:column>
+                                    <!-- the column header -->
+                                    <f:facet name="header">Accion</f:facet>
+
+                                    <!--  the value for each row -->
+                                    <h:commandLink value="Actualizar"
+                                            action="#{categoriasController.loadCategory(tempCategorias.codigo)}"/>
+                                    |
+
+                                    <h:commandLink value="Eliminar"
+                                            onclick="if (!confirm('Esta seguro que desea eliminar la categoria?')) return false"
+                                            action="#{categoriasController.deleteCategory(tempCategorias.codigo)}"/>
+
+                            </h:column>
+
+			</h:dataTable>
+
+			</h:form>
+
+		</div>
+		
+            </div>
+        </div>
+
+        
+        <h:form>
+            <div class="volver">
+            <h1>Volver</h1>
+            <h:commandButton value="Volver" action="principal.xhtml" class="btn btn-primary"/>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+

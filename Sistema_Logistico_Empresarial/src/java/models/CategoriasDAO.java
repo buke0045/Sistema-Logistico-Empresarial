@@ -93,6 +93,44 @@ public class CategoriasDAO extends Conexion{
     }
     
 //Modificar
+    public Categorias getCategory(int categCodigo) throws Exception {
+	
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		ResultSet myRs = null;
+		
+		try {
+			myConn = this.getConnection();
+
+			String sql = "select * from categorias where codigo=?";
+
+			myStmt = myConn.prepareStatement(sql);
+			
+			
+			myStmt.setInt(1, categCodigo);
+			
+			myRs = myStmt.executeQuery();
+
+			Categorias categ = null;
+			
+			if (myRs.next()) {
+				int codigo = myRs.getInt("codigo");
+				String descripcion = myRs.getString("descripcion");
+				String bloque = myRs.getString("bloque");
+
+				categ = new Categorias(codigo, descripcion, bloque);
+			}
+			else {
+				throw new Exception("Could not find category codigo: " + categCodigo);
+			}
+
+			return categ;
+		}
+		finally {
+			this.close (myConn, myStmt, myRs);
+		}
+	}
+    
     public void updateCategoria(Categorias Categ) throws Exception {
 
         Connection myConn = null;
@@ -101,13 +139,14 @@ public class CategoriasDAO extends Conexion{
         try {
                 myConn = this.getConnection();
 
-                String sql = "update student "
-                                        + " set codigo=?, descripcion=?, bloque=?";
+                String sql = "update categorias "
+                                        + " set codigo=?, descripcion=?, bloque=? where codigo=?";
                 myStmt = myConn.prepareStatement(sql);
 
                 myStmt.setInt(1, Categ.getCodigo());
                 myStmt.setString(2, Categ.getDescripcion());
                 myStmt.setString(3, Categ.getBloque());
+                myStmt.setInt(4, Categ.getCodigo());
 
                 myStmt.execute();
         }
@@ -125,7 +164,7 @@ public class CategoriasDAO extends Conexion{
         try {
             myConn = this.getConnection();
 
-            String sql = "delete from student where codigo=?";
+            String sql = "delete from categorias where codigo=?";
 
             myStmt = myConn.prepareStatement(sql);
 

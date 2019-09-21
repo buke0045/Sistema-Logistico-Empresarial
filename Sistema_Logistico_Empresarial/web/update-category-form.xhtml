@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>Actualizar categoria</title>
+	
+	<h:outputStylesheet library="css" name="style.css"  />
+	<h:outputStylesheet library="css" name="add-student-style.css"  />
+	
+</h:head>
+
+<h:body>
+
+	<div id="wrapper">
+		<div id="header">
+			<h2>Universidad Nacional</h2>
+		</div>
+	</div>
+	
+	<div id="container">
+		<h3>Actualización de categoria</h3>
+
+		<h:messages globalOnly="true" />
+
+		<h:form id="form" style="margin-top: 10px;" >
+			<h:panelGrid columns="3">
+			
+				<h:outputLabel>Codigo</h:outputLabel> <h:inputText value="#{categorias.codigo}" id="codigo" /> <h:message for="codigo" />
+	
+				<h:outputLabel>Descripcion</h:outputLabel> <h:inputText value="#{categorias.descripcion}" id="descripcion" /> <h:message for="descripcion" />
+	
+				<h:outputLabel>Bloque</h:outputLabel> <h:inputText value="#{categorias.bloque}" id="bloque" 
+									required="true"
+            							requiredMessage="Campo obligatorio."/> 	<h:message for="bloque"  />
+				
+				 <h:inputHidden value="#{categorias.codigo}" />
+				
+				 <h:commandButton value="Guardar" styleClass="save" action="#{categoriasController.updateCategory(categorias)}"/>
+			
+			</h:panelGrid>
+		</h:form>
+
+		<div style="clear: both;"></div>
+
+		<p><h:outputLink value="list-categories.xhtml">Regresar al listado</h:outputLink></p>
+
+	</div>	
+</h:body>
+</html>

@@ -60,4 +60,9 @@ public class Categorias {
         this.bloque = bloque;
     }
     
+    @Override
+	public String toString() {
+		return "Categories [codigo=" + codigo + ", descripcion=" + descripcion + ", bloque=" + bloque + "]";
+	}
+    
 }
