@@ -15,7 +15,7 @@ import models.User;
 import models.UserDAO;
 
 // VER USERS EXISTENTES(acomodar a un mostrar sin afectar validacion de login),
-// AGREGAR(probar),
+// AGREGAR(probar), h
 // MODIFICAR(falta),
 // ELIMINAR(falta)
 
@@ -57,7 +57,6 @@ public class UserController {
     public String loadUser(String pUsername, String pPassword) {
 		
 	logger.info("loading user: " + pUsername);
-	
 	try {
             User theUser = loginDbUtil.getUser(pUsername, pPassword);	
             if(pUsername.equals(theUser.getUsername()) && pPassword.equals(theUser.getPassword())){
