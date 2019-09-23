@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>Agregar Departamento</title>
+	
+	<h:outputStylesheet library="css" name="style.css"  />
+	<h:outputStylesheet library="css" name="add-student-style.css"  />
+	
+</h:head>
+
+<h:body>
+
+	<div id="wrapper">
+		<div id="header">
+			<h2>Universidad Nacional</h2>
+		</div>
+	</div>
+	
+	<div id="container">
+		<h3>Agregar Departamento</h3>
+
+		<h:messages globalOnly="true" />
+
+		<h:form id="form" style="margin-top: 10px;" >
+			<h:panelGrid columns="3">
+			
+				<h:outputLabel>Codigo:</h:outputLabel> <h:inputText value="#{department.code}" id="code" /> <h:message for="code" />
+	
+				<h:outputLabel>Nombre:</h:outputLabel> <h:inputText value="#{department.name}" id="name" /> <h:message for="name" />
+	
+				<h:outputLabel>Encargado:</h:outputLabel> <h:inputText value="#{department.manager}" id="manager" /> <h:message for="manager" />
+	
+				<h:outputLabel>Ubicacion:</h:outputLabel> <h:inputText value="#{department.location}" id="location" /> <h:message for="location" />
+	
+				<h:outputLabel>Telefono:</h:outputLabel> <h:inputText value="#{department.phone}" id="phone" /> <h:message for="phone" />
+	
+				<h:outputLabel>Correo:</h:outputLabel> <h:inputText value="#{department.email}" id="email" 
+									required="true"
+            							requiredMessage="Campo obligatorio."/> 	<h:message for="block" />
+				
+                                
+                                <h:outputLabel /> <h:commandButton value="Guardar" styleClass="save" action="#{departmentController.addDepartment(department)}"/>
+			
+			</h:panelGrid>
+		</h:form>
+
+		<div style="clear: both;"></div>
+
+		<p><h:outputLink value="AdmDepartments.xhtml">Regresar al listado</h:outputLink></p>
+
+	</div>	
+</h:body>
+</html>
+

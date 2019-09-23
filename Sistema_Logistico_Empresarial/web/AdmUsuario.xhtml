@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{userController.loadUsers()}"/>
+</f:metadata>
+    <h:head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
+        <h:outputStylesheet library="css" name="add-user-style.css"/>
+        <title>Usuarios</title>
+    </h:head>
+    <h:body>
+        <div id="wrapper">
+        <div id="header">
+            <ul>
+                <li>Administración de Usuarios</li>
+                <li>Administración de Categorías</li>
+                <li>Administracion de Productos</li>
+                <li>Administracion de Departamentos</li>
+            </ul>
+        </div>
+            <div id="container">
+                <div id="content">
+                    <h:messages globalOnly="true" />
+                    
+                    <h:form>
+                        <h:dataTable value="#{userController.users}" var="tempUser"  class="table">
+                            <h:column>
+                                <f:facet name="header">Nombre de Usuario</f:facet>
+                                #{tempUser.username}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Contraseña</f:facet>
+                                #{tempUser.password}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Nombre</f:facet>
+                                #{tempUser.name}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Apellido</f:facet>
+                                #{tempUser.surname}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Genero</f:facet>
+                                #{tempUser.gender}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Email</f:facet>
+                                #{tempUser.email}
+                            </h:column>
+                            
+                            <h:column>
+                                <f:facet name="header">Accion</f:facet>
+                                <h:commandLink value="Modificar"
+                                               action="#{userController.loadUser(tempUser.id)}"/>
+                                |
+                                <h:commandLink value="Eliminar"
+                                               onclick="if (!confirm('Esta seguro que desea eliminar el usuario?')) return false"
+                                               action="#{userController.deleteUser(tempUser.id)}"/>
+                            </h:column>
+                        
+                        
+                        </h:dataTable>
+                    </h:form>
+                </div>
+                
+            </div>
+        </div>    
+    
+        <div id="bajo-content">
+            <h:form>
+                <h:commandButton value="Agregar"  action="add-users-form" class="btn btn-primary"/>
+                <h:commandButton value="Volver" action="principal.xhtml" class="btn btn-primary"/>
+            </h:form>
+            
+        </div>
+            
+
+    </h:body>
+</html>
+

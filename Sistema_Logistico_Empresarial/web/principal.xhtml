@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Vista Principal</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">            
+        </link>
+        <h:outputStylesheet library="css" name="add-user-style.css"  />
+    </h:head>
+    <h:body>
+        <div id="header">
+            <ul>
+                <li>Administración de Usuarios</li>
+                <li>Administración de Categorías</li>
+                <li>Administracion de Productos</li>
+                <li>Administracion de Departamentos</li>
+            </ul>
+
+            
+        </div>
+        <div id="container">
+            
+             <h:form>
+            <div class="AdmUs">
+            <h1>Administracion de Usuario</h1>
+            <h:commandButton value="Usuario" action="AdmUsuario.xhtml" class="btn btn-primary"/>
+            </div>
+            
+            <div class="AdmCat">
+            <h1>Administracion de Categorias</h1>
+            <h:commandButton value="Categorias" action="AdmCategories.xhtml" class="btn btn-primary"/>
+            </div>
+            
+            <div class="AdmProd">
+            <h1>Administracion de Productos</h1>
+            <h:commandButton value="Productos" action="AdmProductos.xhtml" class="btn btn-primary"/>
+            </div>
+
+            <div class="AdmDep">
+            <h1>Administracion de Departamentos</h1>
+            <h:commandButton value="Departamentos" action="AdmDepartments.xhtml" class="btn btn-primary"/>
+            </div>
+        </h:form>
+            
+            
+        </div>
+       
+    </h:body>
+</html>
+
