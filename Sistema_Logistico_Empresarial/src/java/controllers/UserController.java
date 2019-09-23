@@ -62,7 +62,6 @@ public class UserController {
 	} catch (Exception exc) {
             logger.log(Level.SEVERE, "Error user controller :" + pUsername, exc);
             addErrorMessage(exc);
-		
             return null; 
 	}
 			

@@ -26,14 +26,14 @@ INSERT INTO categorias(codigo, descripcion, bloque)
 VALUES(1,'Prod1','B1')
 */
 
-public class CategoriasDAO extends Conexion{
+public class CategoryDAO extends Conexion{
 
-    public CategoriasDAO() throws Exception{
+    public CategoryDAO() throws Exception{
         super();
     }
     
 //Agregar
-    public void addCategoria(Categorias pCategorias) throws Exception {
+    public void addCategory(Category pCategories) throws Exception {
 
 	Connection myConn = null;
 	PreparedStatement myStmt = null;
@@ -41,13 +41,13 @@ public class CategoriasDAO extends Conexion{
 	try {
 		myConn = this.getConnection();
 
-		String sql = "insert into categorias (codigo, descripcion, bloque) values (?, ?, ?)";
+		String sql = "insert into category (code, description, block) values (?, ?, ?)";
 
 		myStmt = myConn.prepareStatement(sql);
 
-		myStmt.setInt(1, pCategorias.getCodigo());
-		myStmt.setString(2, pCategorias.getDescripcion());
-		myStmt.setString(3, pCategorias.getBloque());
+		myStmt.setInt(1, pCategories.getCode());
+		myStmt.setString(2, pCategories.getDescription());
+		myStmt.setString(3, pCategories.getBlock());
 		
 		myStmt.execute();			
 	}
@@ -57,9 +57,9 @@ public class CategoriasDAO extends Conexion{
     }
     
 //Mostrar
-    public List<Categorias> getCategorias() throws Exception {
+    public List<Category> getCategory() throws Exception {
 
-        List<Categorias> Categs = new ArrayList<>();
+        List<Category> Categs = new ArrayList<>();
 
         Connection myConn = null;
         Statement myStmt = null;
@@ -68,7 +68,7 @@ public class CategoriasDAO extends Conexion{
         try {
                 myConn = this.getConnection();
 
-                String sql = "select * from categorias order by codigo";
+                String sql = "select * from category order by code";
 
                 myStmt = myConn.createStatement();
 
@@ -76,13 +76,13 @@ public class CategoriasDAO extends Conexion{
 
                 while (myRs.next()) {
 
-                        int codigo = myRs.getInt("codigo");
-                        String descripcion = myRs.getString("descripcion");
-                        String bloque = myRs.getString("bloque");
+                        int code = myRs.getInt("code");
+                        String description = myRs.getString("description");
+                        String block = myRs.getString("block");
 
-                        Categorias tempStudent = new Categorias(codigo, descripcion, bloque);
+                        Category tempCategory = new Category(code, description, block);
 
-                        Categs.add(tempStudent);
+                        Categs.add(tempCategory);
                 }
 
                 return Categs;		
@@ -93,7 +93,7 @@ public class CategoriasDAO extends Conexion{
     }
     
 //Modificar
-    public Categorias getCategory(int categCodigo) throws Exception {
+    public Category getCategory(int categCode) throws Exception {
 	
 		Connection myConn = null;
 		PreparedStatement myStmt = null;
@@ -102,26 +102,26 @@ public class CategoriasDAO extends Conexion{
 		try {
 			myConn = this.getConnection();
 
-			String sql = "select * from categorias where codigo=?";
+			String sql = "select * from category where code=?";
 
 			myStmt = myConn.prepareStatement(sql);
 			
 			
-			myStmt.setInt(1, categCodigo);
+			myStmt.setInt(1, categCode);
 			
 			myRs = myStmt.executeQuery();
 
-			Categorias categ = null;
+			Category categ = null;
 			
 			if (myRs.next()) {
-				int codigo = myRs.getInt("codigo");
-				String descripcion = myRs.getString("descripcion");
-				String bloque = myRs.getString("bloque");
+				int code = myRs.getInt("code");
+				String description = myRs.getString("description");
+				String block = myRs.getString("block");
 
-				categ = new Categorias(codigo, descripcion, bloque);
+				categ = new Category(code, description, block);
 			}
 			else {
-				throw new Exception("Could not find category codigo: " + categCodigo);
+				throw new Exception("Could not find category code: " + categCode);
 			}
 
 			return categ;
@@ -131,7 +131,7 @@ public class CategoriasDAO extends Conexion{
 		}
 	}
     
-    public void updateCategoria(Categorias Categ) throws Exception {
+    public void updateCategory(Category Categ) throws Exception {
 
         Connection myConn = null;
         PreparedStatement myStmt = null;
@@ -139,14 +139,14 @@ public class CategoriasDAO extends Conexion{
         try {
                 myConn = this.getConnection();
 
-                String sql = "update categorias "
-                                        + " set codigo=?, descripcion=?, bloque=? where codigo=?";
+                String sql = "update category "
+                                        + " set code=?, description=?, block=? where code=?";
                 myStmt = myConn.prepareStatement(sql);
 
-                myStmt.setInt(1, Categ.getCodigo());
-                myStmt.setString(2, Categ.getDescripcion());
-                myStmt.setString(3, Categ.getBloque());
-                myStmt.setInt(4, Categ.getCodigo());
+                myStmt.setInt(1, Categ.getCode());
+                myStmt.setString(2, Categ.getDescription());
+                myStmt.setString(3, Categ.getBlock());
+                myStmt.setInt(4, Categ.getCode());
 
                 myStmt.execute();
         }
@@ -156,7 +156,7 @@ public class CategoriasDAO extends Conexion{
     }
     
 //Eliminar
-    public void deleteCategoria(int CategCodigo) throws Exception {
+    public void deleteCategory(int CategCode) throws Exception {
 
         Connection myConn = null;
         PreparedStatement myStmt = null;
@@ -164,11 +164,11 @@ public class CategoriasDAO extends Conexion{
         try {
             myConn = this.getConnection();
 
-            String sql = "delete from categorias where codigo=?";
+            String sql = "delete from category where code=?";
 
             myStmt = myConn.prepareStatement(sql);
 
-            myStmt.setInt(1, CategCodigo);
+            myStmt.setInt(1, CategCode);
 
             myStmt.execute();
         }

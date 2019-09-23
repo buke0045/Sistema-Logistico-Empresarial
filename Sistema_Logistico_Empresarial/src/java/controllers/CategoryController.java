@@ -19,24 +19,24 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
-import models.Categorias;
-import models.CategoriasDAO;
+import models.Category;
+import models.CategoryDAO;
 
 @ManagedBean
 @SessionScoped
-public class CategoriasController {
+public class CategoryController {
     
-    private List<Categorias> Categs;
-    private CategoriasDAO CategsDbUtil;
+    private List<Category> Categs;
+    private CategoryDAO CategsDbUtil;
     private Logger logger = Logger.getLogger(getClass().getName());
 
-    public CategoriasController() throws Exception {
+    public CategoryController() throws Exception {
             Categs = new ArrayList<>();
 
-            CategsDbUtil = CategoriasDAO.getInstanceC();
+            CategsDbUtil = CategoryDAO.getInstanceC();
     }
 
-    public List<Categorias> getCategories() {
+    public List<Category> getCategories() {
             return Categs;
     }
 
@@ -48,7 +48,7 @@ public class CategoriasController {
 
             try {			
 
-                    Categs = CategsDbUtil.getCategorias();
+                    Categs = CategsDbUtil.getCategory();
 
             } catch (Exception exc) {			
                     logger.log(Level.SEVERE, "Error loading categories", exc);		
@@ -56,35 +56,35 @@ public class CategoriasController {
             }
     }
 
-    public String addCategory(Categorias categs) {
+    public String addCategory(Category categs) {
 
-            logger.info("Adding categories: " + categs);
+            logger.info("Adding category: " + categs);
 
             try {
-                    CategsDbUtil.addCategoria(categs);
+                    CategsDbUtil.addCategory(categs);
 
             } catch (Exception exc) {
-                    logger.log(Level.SEVERE, "Error adding categories", exc);			
+                    logger.log(Level.SEVERE, "Error adding category", exc);			
                     addErrorMessage(exc);
 
                     return null;
             }
 
-            return "list-categories?faces-redirect=true";
+            return "AdmCategories?faces-redirect=true";
     }
 
-    public String loadCategory(int categCodigo) {
+    public String loadCategory(int categCode) {
 
-            logger.info("loading category: " + categCodigo);
+            logger.info("loading category: " + categCode);
 
             try {
-                    Categorias categs = CategsDbUtil.getCategory(categCodigo);
+                    Category categs = CategsDbUtil.getCategory(categCode);
                     ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();		
                     Map<String, Object> requestMap = externalContext.getRequestMap();
-                    requestMap.put("categorias", categs);	
+                    requestMap.put("category", categs);	
 
             } catch (Exception exc) {
-                    logger.log(Level.SEVERE, "Error loading category codigo:" + categCodigo, exc);
+                    logger.log(Level.SEVERE, "Error loading category code:" + categCode, exc);
                     addErrorMessage(exc);
 
                     return null;
@@ -93,10 +93,10 @@ public class CategoriasController {
             return "update-category-form.xhtml";
     }	
 
-    public String updateCategory(Categorias categ) {
-            logger.info("updating categoria: " + categ);		
+    public String updateCategory(Category categ) {
+            logger.info("updating category: " + categ);		
             try {			
-                    CategsDbUtil.updateCategoria(categ);
+                    CategsDbUtil.updateCategory(categ);
 
             } catch (Exception exc) {
                     logger.log(Level.SEVERE, "Error updating category: " + categ, exc);
@@ -105,24 +105,24 @@ public class CategoriasController {
                     return null;
             }
 
-            return "list-categories?faces-redirect=true";		
+            return "AdmCategories?faces-redirect=true";		
     }
 
-    public String deleteCategory(int categCodigo) {
+    public String deleteCategory(int categCode) {
 
-            logger.info("Deleting category code: " + categCodigo);
+            logger.info("Deleting category code: " + categCode);
 
             try {
-                    CategsDbUtil.deleteCategoria(categCodigo);
+                    CategsDbUtil.deleteCategory(categCode);
 
             } catch (Exception exc) {
-                    logger.log(Level.SEVERE, "Error deleting category code: " + categCodigo, exc);
+                    logger.log(Level.SEVERE, "Error deleting category code: " + categCode, exc);
                     addErrorMessage(exc);
 
                     return null;
             }
 
-            return "list-categories";	
+            return "AdmCategories";	
     }	
 
     private void addErrorMessage(Exception exc) {

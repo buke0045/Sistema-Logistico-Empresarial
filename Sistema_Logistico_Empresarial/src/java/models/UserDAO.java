@@ -133,7 +133,6 @@ public class UserDAO extends Conexion{
                 myConn = this.getConnection();
                 String sql = "update user set username=?, password=?, name=?, surname=?, gender=?, email=?  where id=?";
                 myStmt = myConn.prepareStatement(sql);
-                
                 myStmt.setString(1, pUser.getUsername());
 		myStmt.setString(2, pUser.getPassword());
 		myStmt.setString(3, pUser.getName());
