@@ -1,5 +1,4 @@
-
-x<?xml version='1.0' encoding='UTF-8' ?>
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -11,9 +10,10 @@ x<?xml version='1.0' encoding='UTF-8' ?>
         <title>Registrar Usuario</title>
     </h:head>
     <h:body>
-        <div id="header">
+        <div id="header"></div>
+        <div id="navigation">
             <ul>
-                <li>Administración de Usuarios</li>
+                <li><h:commandLink id="a">Administración de Usuarios</h:commandLink></li>
                 <li>Administración de Categorías</li>
                 <li>Administracion de Productos</li>
                 <li>Administracion de Departamentos</li>
@@ -26,17 +26,17 @@ x<?xml version='1.0' encoding='UTF-8' ?>
             <h:messages globalOnly="true"/>
             <br></br>
             <br></br>
-            <h:form>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
+            <h:form id="form">
+                <div id="form-row" class="form-row">
+                    <div class="form-group col-md-5">
                         Nombre: <h:inputText id="name" class="form-control" required="true" requiredMessage="* Campo Obligatorio *" value="#{user.name}"/>
                         <h:messages for="name"/>
                     </div>
-                    <div class="form-group col-md-6">
-                        Apellidos: <h:inputText id="surname" class="form-control" value="#{user.surname}"/>
+                    <div class="form-group col-md-5 text-center">
+                        Apellidos: <h:inputText  id="surname" class="form-control" value="#{user.surname}"/>
                     </div>
                 </div>
-                <div class="form-row">
+                <div id="form-row" class="form-row">
                     <div class="form-group col-md-3">
                         Genero:
                         <h:selectOneMenu id="gender" class="form-control" value="#{user.gender}">
@@ -45,24 +45,36 @@ x<?xml version='1.0' encoding='UTF-8' ?>
                             <f:selectItem itemLabel="Mujer" itemValue="Mujer"/>
                         </h:selectOneMenu>
                     </div>
-                    <div class="form-group col-md-9">
+                    <div class="form-group col-md-7">
                         Correo: <h:inputText id="email" class="form-control" value="#{user.email}"/>
                     </div>
                 </div>
-                <div class="form-row">
-                        <div class="form-group col-md-6">
+                <div id="form-row" class="form-row">
+                        <div class="form-group col-md-5">
                             Nombre de Usuario: <h:inputText id="username" class="form-control" required="true" requiredMessage="* Campo Obligatorio *" value="#{user.username}"/>
                             <h:messages for="username"/>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-5">
                             Contraseña: <h:inputSecret id="password" class="form-control" required="true" requiredMessage="* Campo Obligatorio *"  value="#{user.password}"/>
                             <h:messages for="password"/>
                         </div>
                     </div>
-                <h:commandButton value="Registrar"  action="#{userController.addUser(user)}"/>
+                
+                <div id="form-row" class="form-row">
+                            <div class="form-group col-md-3">
+                                <h:commandButton immediate="true" value="Volver" action="principal.xhtml" class="btn btn-primary"/>
+                            </div>
+                            <div class="form-group col-md-5 text-right">
+                                <h:commandButton value="Registrar" class="btn btn-primary" action="#{userController.addUser(user)}"/> 
+                            </div>
+                            
+                        </div>
+                
+                
+                
                 
             </h:form>
-            <h:form><h:commandButton value="Volver" action="principal.xhtml" class="btn btn-primary"/></h:form>
+            <h:form></h:form>
             
         </div>
     </h:body>

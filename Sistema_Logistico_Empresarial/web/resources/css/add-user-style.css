@@ -2,20 +2,33 @@
     height: 100px;
     background-color: mediumblue;
 }
-#header ul, #header li{
-    display: inline-block;
-    padding: 18px;
-    text-align:  center;
+#navigation{
+    background-color: mediumturquoise;
+    width: 25%;
+    height: 800px;
+    float: left;
 }
-
-#header li:hover{
-    border-radius: 16px;
-    background-color: activeborder;
+#navigation li{
+    text-decoration: none;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+#navigation li:hover{
+    background-color: turquoise;
 }
 #container{
-    width: 80%;
-    margin: auto; 
+    width: 75%;
+    float: right;
     background-color: lightgreen; 
     padding: 25px;
     border-radius: 16px;
+}
+
+#form{
+   
+    width: 75%;
+    margin: auto;
+}
+#form-row{
+    margin-left: 18%;
 }
