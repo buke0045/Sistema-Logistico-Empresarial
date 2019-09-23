@@ -1,8 +1,8 @@
 
 package models;
 
-import java.io.File;
 import javax.faces.bean.ManagedBean;
+import java.sql.Blob;
 
 @ManagedBean
 public class Product {
@@ -12,12 +12,12 @@ public class Product {
     private int currentExist;
     private int minExist;
     private int maxExist;
-    private File image;
+    private Blob image;
     
     public Product(){
     
     }
-    public Product(int code, String description, String category, int currentExist, int minExist, int maxExist, File image){
+    public Product(int code, String description, String category, int currentExist, int minExist, int maxExist, Blob image){
         this.code = code;
         this.description = description;
         this.category = category;
@@ -114,14 +114,14 @@ public class Product {
     /**
      * @return the image
      */
-    public File getImage() {
+    public Blob getImage() {
         return image;
     }
 
     /**
      * @param image the image to set
      */
-    public void setImage(File image) {
+    public void setImage(Blob image) {
         this.image = image;
     }
     

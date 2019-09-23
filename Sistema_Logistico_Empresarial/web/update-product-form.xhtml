@@ -28,7 +28,7 @@
 		<h:messages globalOnly="true" />
 
 		<h:form id="form" style="margin-top: 10px;" >
-			<h:panelGrid columns="6">
+			<h:panelGrid columns="7">
 			
 				<h:outputLabel>Codigo</h:outputLabel> <h:inputText value="#{product.code}" id="code" /> <h:message for="code" />
 	
@@ -44,6 +44,8 @@
 									required="true"
             							requiredMessage="Campo obligatorio."/> 	<h:message for="maxExist"  />
 				
+                                <h:outputLabel>Imagen</h:outputLabel> <h:inputFile value="#{product.image}" id="image" /> <h:message for="image" />
+                                
 				 <h:inputHidden value="#{product.code}" />
 				
 				 <h:commandButton value="Guardar" styleClass="save" action="#{productController.updateProduct(product)}"/>
