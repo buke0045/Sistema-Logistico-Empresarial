@@ -8,53 +8,58 @@
 </f:metadata>
     <h:head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
-        <h:outputStylesheet library="css" name="add-user-style.css"  />
+        <h:outputStylesheet library="css" name="add-user-style.css"/>
         <title>Usuarios</title>
     </h:head>
     <h:body>
         <div id="wrapper">
-            <div id="header">
-                <h1 class="text-center">Administración de usuarios</h1>
-            </div>
+        <div id="header">
+            <ul>
+                <li>Administración de Usuarios</li>
+                <li>Administración de Categorías</li>
+                <li>Administracion de Productos</li>
+                <li>Administracion de Departamentos</li>
+            </ul>
+        </div>
             <div id="container">
                 <div id="content">
                     <h:messages globalOnly="true" />
                     
                     <h:form>
-                        <h:dataTable value="#{userController.users}" var="tempUsers"  class="table">
+                        <h:dataTable value="#{userController.users}" var="tempUser"  class="table">
                             <h:column>
                                 <f:facet name="header">Nombre de Usuario</f:facet>
-                                #{tempUsers.username}
+                                #{tempUser.username}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Contraseña</f:facet>
-                                #{tempUsers.password}
+                                #{tempUser.password}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Nombre</f:facet>
-                                #{tempUsers.name}
+                                #{tempUser.name}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Apellido</f:facet>
-                                #{tempUsers.surname}
+                                #{tempUser.surname}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Genero</f:facet>
-                                #{tempUsers.gender}
+                                #{tempUser.gender}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Email</f:facet>
-                                #{tempUsers.email}
+                                #{tempUser.email}
                             </h:column>
                             
                             <h:column>
                                 <f:facet name="header">Accion</f:facet>
                                 <h:commandLink value="Modificar"
-						action="#{studentController.loadStudent(tempStudent.id)}"/>
-                                
+                                               action="#{userController.loadUser(tempUser.id)}"/>
+                                |
                                 <h:commandLink value="Eliminar"
-                                               onclick="if (!confirm('Esta seguro que desea eliminar el estudiante?')) return false"
-                                               action="#{studentController.deleteStudent(tempStudent.id)}"/>
+                                               onclick="if (!confirm('Esta seguro que desea eliminar el usuario?')) return false"
+                                               action="#{userController.deleteUser(tempUser.id)}"/>
                             </h:column>
                         
                         

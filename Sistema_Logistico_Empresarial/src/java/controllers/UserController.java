@@ -58,24 +58,41 @@ public class UserController {
 		
 	logger.info("loading user: " + pUsername);
 	try {
-            User theUser = loginDbUtil.getUser(pUsername, pPassword);	
-            if(pUsername.equals(theUser.getUsername()) && pPassword.equals(theUser.getPassword())){
-                return "principal.xhtml";   
-            }
+            loginDbUtil.getUser(pUsername, pPassword);	
 	} catch (Exception exc) {
             logger.log(Level.SEVERE, "Error user controller :" + pUsername, exc);
             addErrorMessage(exc);
-		
-            return null;
+            return null; 
 	}
 			
-	return null;
+	return "principal.xhtml";
+    }
+    public String loadUser(int userId) {
+
+            logger.info("loading User: " + userId);
+
+            try {
+                    User users = loginDbUtil.getUser(userId);
+                    
+                    ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();		
+                    Map<String, Object> requestMap = externalContext.getRequestMap();
+                    requestMap.put("user", users);
+                 
+                    
+            } catch (Exception exc) {
+                    logger.log(Level.SEVERE, "Error loading User id:" + userId, exc);
+                    addErrorMessage(exc);
+
+                    return null;
+            }
+
+            return "update-user-form.xhtml";
     }
     public String updateUser(User pUser) {
-            logger.info("updating User: " + pUser);		
+            logger.info("updating User id: " + pUser.getId());		
             try {			
                     loginDbUtil.updateUser(pUser);
-
+                    logger.info("updating User name: " + pUser.getName());
             } catch (Exception exc) {
                     logger.log(Level.SEVERE, "Error updating User: " + pUser, exc);
                     addErrorMessage(exc);
@@ -84,6 +101,22 @@ public class UserController {
             }
 
             return "AdmUsuario?faces-redirect=true";		
+    }
+    public String deleteUser(int userId) {
+
+	logger.info("Deleting User id: " + userId);
+	
+	try {
+		loginDbUtil.deleteUser(userId);
+		
+	} catch (Exception exc) {
+		logger.log(Level.SEVERE, "Error deleting User id: " + userId, exc);
+		addErrorMessage(exc);
+		
+		return null;
+	}
+	
+	return "list-students";	
     }
     private void addErrorMessage(Exception exc) {
 		FacesMessage message = new FacesMessage("Error: " + exc.getMessage());
