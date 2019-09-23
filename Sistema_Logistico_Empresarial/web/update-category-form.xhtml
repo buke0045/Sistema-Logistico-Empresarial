@@ -30,24 +30,24 @@
 		<h:form id="form" style="margin-top: 10px;" >
 			<h:panelGrid columns="3">
 			
-				<h:outputLabel>Codigo</h:outputLabel> <h:inputText value="#{categorias.codigo}" id="codigo" /> <h:message for="codigo" />
+				<h:outputLabel>Codigo</h:outputLabel> <h:inputText value="#{category.code}" id="code" /> <h:message for="code" />
 	
-				<h:outputLabel>Descripcion</h:outputLabel> <h:inputText value="#{categorias.descripcion}" id="descripcion" /> <h:message for="descripcion" />
+				<h:outputLabel>Descripcion</h:outputLabel> <h:inputText value="#{category.description}" id="description" /> <h:message for="description" />
 	
-				<h:outputLabel>Bloque</h:outputLabel> <h:inputText value="#{categorias.bloque}" id="bloque" 
+				<h:outputLabel>Bloque</h:outputLabel> <h:inputText value="#{category.block}" id="block" 
 									required="true"
-            							requiredMessage="Campo obligatorio."/> 	<h:message for="bloque"  />
+            							requiredMessage="Campo obligatorio."/> 	<h:message for="block"  />
 				
-				 <h:inputHidden value="#{categorias.codigo}" />
+				 <h:inputHidden value="#{category.code}" />
 				
-				 <h:commandButton value="Guardar" styleClass="save" action="#{categoriasController.updateCategory(categorias)}"/>
+				 <h:commandButton value="Guardar" styleClass="save" action="#{categoryController.updateCategory(category)}"/>
 			
 			</h:panelGrid>
 		</h:form>
 
 		<div style="clear: both;"></div>
 
-		<p><h:outputLink value="list-categories.xhtml">Regresar al listado</h:outputLink></p>
+		<p><h:outputLink value="AdmCategories.xhtml">Regresar al listado</h:outputLink></p>
 
 	</div>	
 </h:body>

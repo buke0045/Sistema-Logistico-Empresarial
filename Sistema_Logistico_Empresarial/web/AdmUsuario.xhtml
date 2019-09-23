@@ -13,7 +13,68 @@
             <h1>Volver</h1>
             <h:commandButton value="Volver" action="principal.xhtml" class="btn btn-primary"/>
             </div>
+<<<<<<< Updated upstream
         </h:form>
+=======
+            <div id="container">
+                <div id="content">
+                    <h:messages globalOnly="true" />
+                    
+                    <h:form>
+                        <h:dataTable value="#{userController.users}" var="tempUsers"  class="table">
+                            <h:column>
+                                <f:facet name="header">Nombre de Usuario</f:facet>
+                                #{tempUsers.username}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Contraseña</f:facet>
+                                #{tempUsers.password}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Nombre</f:facet>
+                                #{tempUsers.name}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Apellido</f:facet>
+                                #{tempUsers.surname}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Genero</f:facet>
+                                #{tempUsers.gender}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Email</f:facet>
+                                #{tempUsers.email}
+                            </h:column>
+                            
+                            <h:column>
+                                <f:facet name="header">Accion</f:facet>
+                                <h:commandLink value="Modificar"
+						action="#{studentController.loadStudent(tempStudent.id)}"/>
+                                
+                                <h:commandLink value="Eliminar"
+                                               onclick="if (!confirm('Esta seguro que desea eliminar el estudiante?')) return false"
+                                               action="#{studentController.deleteStudent(tempStudent.id)}"/>
+                            </h:column>
+                        
+                        
+                        </h:dataTable>
+                    </h:form>
+                </div>
+                
+            </div>
+        </div>    
+    
+        <div id="bajo-content">
+            <h:form>
+                <h:commandButton value="Agregar"  action="add-users-form" class="btn btn-primary"/>
+                <h:commandButton value="Volver" action="principal.xhtml" class="btn btn-primary"/>
+            </h:form>
+            
+        </div>
+            
+
+>>>>>>> Stashed changes
     </h:body>
 </html>
 

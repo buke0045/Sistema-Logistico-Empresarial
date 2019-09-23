@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      
+<f:metadata>
+  <f:event type="preRenderView" listener="#{departmentController.loadDepartments()}"/>
+</f:metadata>      
+    
+    <h:head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+<!--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
+        <h:outputStylesheet library="css" name="add-user-style.css"  />
+-->        <title>Departamentos</title>
+        
+        <h:outputStylesheet library="css" name="style.css"  />
+
+    </h:head>
+    
+    <h:body>
+        <div id="wrapper">
+            <div id="header">
+                <h1 class="text-center">Administración de departamentos</h1>
+            </div>	
+
+            <div id="container">
+
+		<div id="content">
+		    <h:messages globalOnly="true" />
+		
+                    <h:form>
+
+                    <h:dataTable value="#{departmentController.departments}" var="tempDepartments"
+                            styleClass="demo-table" 
+                            headerClass="demo-table-header"
+                            rowClasses="demo-table-odd-row,demo-table-even-row">
+
+                            <h:column>
+                                    <!-- the column header -->
+                                    <f:facet name="header">Codigo</f:facet>
+
+                                    <!--  the value for each row -->
+                                    #{tempDepartments.code}
+                            </h:column>
+
+                            <h:column>
+                                    <!-- the column header -->
+                                    <f:facet name="header">Nombre</f:facet>
+
+                                    <!--  the value for each row -->
+                                    #{tempDepartments.name}
+                            </h:column>
+
+                            <h:column>
+                                    <!-- the column header -->
+                                    <f:facet name="header">Encargado</f:facet>
+
+                                    <!--  the value for each row -->
+                                    #{tempDepartments.manager}
+                            </h:column>
+
+                            <h:column>
+                                    <!-- the column header -->
+                                    <f:facet name="header">Ubicacion</f:facet>
+
+                                    <!--  the value for each row -->
+                                    #{tempDepartments.location}
+                            </h:column>
+
+                            <h:column>
+                                    <!-- the column header -->
+                                    <f:facet name="header">Telefono</f:facet>
+
+                                    <!--  the value for each row -->
+                                    #{tempDepartments.phone}
+                            </h:column>
+
+                            <h:column>
+                                    <!-- the column header -->
+                                    <f:facet name="header">Correo</f:facet>
+
+                                    <!--  the value for each row -->
+                                    #{tempDepartments.email}
+                            </h:column>
+
+                            <h:column>
+                                    <!-- the column header -->
+                                    <f:facet name="header">Accion</f:facet>
+
+                                    <!--  the value for each row -->
+                                    <h:commandLink value="Actualizar"
+                                            action="#{departmentController.loadDepartment(tempDepartments.code)}"/>
+                                    |
+
+                                    <h:commandLink value="Eliminar"
+                                            onclick="if (!confirm('Esta seguro que desea eliminar el departamento?')) return false"
+                                            action="#{departmentController.deleteDepartment(tempDepartments.code)}"/>
+
+                            </h:column>
+
+			</h:dataTable>
+
+			</h:form>
+
+		</div>
+		
+            </div>
+        </div>
+
+        <div id="bajo-content">
+        <h:form>
+            <div class="volver">
+            <h:button value="Agregar" styleClass="add-department-button" outcome="add-department-form"/>
+            <h:commandButton value="Volver" action="principal.xhtml" class="btn btn-primary"/>
+            </div>
+        </h:form>
+           </div>
+    </h:body>
+    
+</html>
+
