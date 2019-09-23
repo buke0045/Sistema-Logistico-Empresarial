@@ -3,11 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/juanc/Documents/U/2°%20año/4°%20semestre/Progra%203/Git/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/web/congra.xhtml</file>
-            <file>file:/C:/Users/juanc/Documents/U/2°%20año/4°%20semestre/Progra%203/Git/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/src/java/models/User.java</file>
-            <file>file:/C:/Users/juanc/Documents/U/2°%20año/4°%20semestre/Progra%203/Git/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/web/login.xhtml</file>
-            <file>file:/C:/Users/juanc/Documents/U/2°%20año/4°%20semestre/Progra%203/Git/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/src/java/controllers/UserController.java</file>
-            <file>file:/C:/Users/juanc/Documents/U/2°%20año/4°%20semestre/Progra%203/Git/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/web/index.xhtml</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/web/WEB-INF/glassfish-resources.xml</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/src/java/models/UserDAO.java</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/src/java/models/CategoriasDAO.java</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/web/update-category-form.xhtml</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/src/java/controllers/UserController.java</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/src/java/controllers/CategoriasController.java</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/web/resources/css/loginStyle.css</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/web/AdmUsuario.xhtml</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/web/add-category-form.xhtml</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/web/resources/css/list-users.css</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/web/login.xhtml</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/web/resources/css/add-user-style.css</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/web/add-users-form.xhtml</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/web/principal.xhtml</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/src/java/models/Conexion.java</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/src/java/models/User.java</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/web/index.xhtml</file>
+            <file>file:/C:/Users/Juana/Documents/GitHub/Sistema-Logistico-Empresarial/Sistema_Logistico_Empresarial/web/list-categories.xhtml</file>
         </group>
     </open-files>
 </project-private>

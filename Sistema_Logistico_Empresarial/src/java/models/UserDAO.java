@@ -64,7 +64,6 @@ public class UserDAO extends Conexion{
         }
     }
     public User getUser(String pUsername, String pPassword) throws Exception {
-	
 	Connection myConn = null;
 	PreparedStatement myStmt = null;
 	ResultSet myRs = null;
@@ -73,16 +72,11 @@ public class UserDAO extends Conexion{
 		myConn = this.getConnection();
 
 		String sql = "select * from user where username=? AND password=?";
-
 		myStmt = myConn.prepareStatement(sql);
-		
-		
 		myStmt.setString(1, pUsername);
                 myStmt.setString(2, pPassword);
 		myRs = myStmt.executeQuery();
-
 		User pUser = null;
-		
 		if (myRs.next()) {
 			int id = myRs.getInt("id");
 			String username = myRs.getString("username");
@@ -91,42 +85,86 @@ public class UserDAO extends Conexion{
                         String surname = myRs.getString("surname");
                         String gender = myRs.getString("gender");
                         String email = myRs.getString("email");
-
 			pUser = new User(id, username, password, name, surname, gender, email);
 		}
 		else {
 			throw new Exception("Usuario o Contraseña invalidos");
 		}
-
 		return pUser;
 	}
 	finally {
 		this.close (myConn, myStmt, myRs);
 	}
     }
+    public User getUser(int userId) throws Exception {
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		ResultSet myRs = null;
+		try {
+			myConn = this.getConnection();
+			String sql = "select * from user where id=?";
+			myStmt = myConn.prepareStatement(sql);
+			myStmt.setInt(1, userId);
+			myRs = myStmt.executeQuery();
+			User pUser = null;
+			if (myRs.next()) {
+				int id = myRs.getInt("id");
+                                String username = myRs.getString("username");
+                                String password = myRs.getString("password");
+                                String name = myRs.getString("name");
+                                String surname = myRs.getString("surname");
+                                String gender = myRs.getString("gender");
+                                String email = myRs.getString("email");
+			pUser = new User(id, username, password, name, surname, gender, email);
+			}
+			else {
+				throw new Exception("Could not find category codigo: " + userId);
+			}
+			return pUser;
+		}
+		finally {
+			this.close (myConn, myStmt, myRs);
+		}
+	}
      public void updateUser(User pUser) throws Exception {
-
         Connection myConn = null;
         PreparedStatement myStmt = null;
-
         try {
                 myConn = this.getConnection();
-
-                String sql = "update User " + " set username=?, password=?, name=?, surname=?, gender=?, email=?  where id=?";
+                String sql = "update user set username=?, password=?, name=?, surname=?, gender=?, email=?  where id=?";
                 myStmt = myConn.prepareStatement(sql);
-
-                myStmt.setInt(1, pUser.getId());
+                
                 myStmt.setString(1, pUser.getUsername());
 		myStmt.setString(2, pUser.getPassword());
 		myStmt.setString(3, pUser.getName());
 		myStmt.setString(4, pUser.getSurname());
 		myStmt.setString(5, pUser.getGender());
 		myStmt.setString(6, pUser.getEmail());
-
+                myStmt.setInt(7, pUser.getId());
                 myStmt.execute();
         }
         finally {
                 this.close (myConn, myStmt);
         }
+    }
+     public void deleteUser(int userId) throws Exception {
+
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+
+        try {
+            myConn = this.getConnection();
+
+            String sql = "delete from user where id=?";
+
+            myStmt = myConn.prepareStatement(sql);
+
+            myStmt.setInt(1, userId);
+
+            myStmt.execute();
+        }
+        finally {
+            this.close (myConn, myStmt);
+        }		
     }
 }
