@@ -9,7 +9,7 @@
     float: left;
 }
 #navigation li{
-    text-decoration: none;
+    list-style: none;
     padding-top: 2em;
     padding-bottom: 2em;
 }
@@ -25,7 +25,6 @@
 }
 
 #form{
-   
     width: 75%;
     margin: auto;
 }
