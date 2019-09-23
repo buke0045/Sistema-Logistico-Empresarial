@@ -6,9 +6,22 @@
         <title>Vista Principal</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">            
         </link>
+        <h:outputStylesheet library="css" name="add-user-style.css"  />
     </h:head>
     <h:body>
-        <h:form>
+        <div id="header">
+            <ul>
+                <li>Administración de Usuarios</li>
+                <li>Administración de Categorías</li>
+                <li>Administracion de Productos</li>
+                <li>Administracion de Departamentos</li>
+            </ul>
+
+            
+        </div>
+        <div id="container">
+            
+             <h:form>
             <div class="AdmUs">
             <h1>Administracion de Usuario</h1>
             <h:commandButton value="Usuario" action="AdmUsuario.xhtml" class="btn btn-primary"/>
@@ -29,6 +42,10 @@
             <h:commandButton value="Departamentos" action="AdmDepartments.xhtml" class="btn btn-primary"/>
             </div>
         </h:form>
+            
+            
+        </div>
+       
     </h:body>
 </html>
 
