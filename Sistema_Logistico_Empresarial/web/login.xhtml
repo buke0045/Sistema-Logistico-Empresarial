@@ -29,12 +29,10 @@
                         <p class="text-danger"><h:message for="password"/></p>
                         <br></br>
                         <h:commandButton value="Ingresar"  styleClass="login-button" action="#{userController.loadUser(user.username, user.password)}"/>
-<!--
-Quite el registrar de aqui, porque si no pedi llenar obligatoriamente los campos
--->
+
+                        <h:commandButton value="Registrar" immediate="true" styleClass="login-button" action="add-users-form"/>
                        
                     </h:form> 
-                    <h:form><h:commandButton value="Registrar"  styleClass="login-button" action="add-login-form"/></h:form>
                 </div>
                 
             </div>
