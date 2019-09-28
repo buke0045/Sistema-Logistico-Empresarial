@@ -8,6 +8,9 @@
     height: 800px;
     float: left;
 }
+#navigation ul{
+    padding: 0px;
+}
 #navigation li{
     list-style: none;
     padding-top: 2em;
