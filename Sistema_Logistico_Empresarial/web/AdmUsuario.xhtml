@@ -19,8 +19,6 @@
         <div id="navigation">
             <h:form>    
 
-                <ul>
-
                 <ul  class="text-center">
 
                     <li>Administración de Usuarios</li>
@@ -66,7 +64,7 @@
                                 <f:facet name="header">Accion</f:facet>
                                 <h:commandLink value="Modificar"
                                                action="#{userController.loadUser(tempUser.id)}"/>
-                                |
+                                
                                 <h:commandLink value="Eliminar"
                                                onclick="if (!confirm('Esta seguro que desea eliminar el usuario?')) return false"
                                                action="#{userController.deleteUser(tempUser.id)}"/>
