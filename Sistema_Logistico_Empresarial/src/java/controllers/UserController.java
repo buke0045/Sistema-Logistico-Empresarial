@@ -116,7 +116,7 @@ public class UserController {
 		return null;
 	}
 	
-	return "list-students";	
+	return "AdmUsuario?faces-redirect=true";	
     }
     private void addErrorMessage(Exception exc) {
 		FacesMessage message = new FacesMessage("Error: " + exc.getMessage());
