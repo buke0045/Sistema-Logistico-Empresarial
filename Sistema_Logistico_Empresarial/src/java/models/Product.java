@@ -31,7 +31,7 @@ public class Product {
         this.currentExist = currentExist;
         this.minExist = minExist;
         this.maxExist = maxExist;
-        this.image = image;
+        this.image = null;
     }
 
     /**
@@ -128,9 +128,9 @@ public class Product {
     /**
      * @param image the image to set
      */
-    public void setImage(String fileName,InputStream in) {
+    public void setImage(Blob image){ /*(String fileName,InputStream in) {
         
-/*        try{  
+        try{  
             ServletContext servC= (ServletContext)FacesContext.getCurrentInstance().getExternalContext().getContext();
             String serverURL = servC.getRealPath("")+File.separatorChar+"resources"+
                     File.separatorChar+"img"+File.separatorChar; //\\localhost\WebApplication2\resources\img\
@@ -151,6 +151,6 @@ public class Product {
     }
         NO WORKS
 */
-    this.image = null;
-    
+        this.image = image;
+    }
 }
