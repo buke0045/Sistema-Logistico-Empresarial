@@ -2,12 +2,14 @@ html,body{
     margin: 0px; 
     padding:0px; 
     font-family:Verdana, Arial, Helvetica, sans-serif;
-    background: #112c38;
+/*    background: #112c38;*/
+    background: #3BBBEB;
 }
 
 .nav{
     height: 130px;
-    background-color: #00cccc;
+/*    background-color: #00cccc;*/
+    background-color: #52FFF0;
 }
 
 .logo{
@@ -65,13 +67,14 @@ html,body{
 #navigation{
 /*    background-color: mediumturquoise;*/
     padding: 20px 0px;
-    background-color: yellow;
+    background-color: #3FE89A;
     width: 25%;
     height: 450px;
     float: left;
 }
 .text-center{
-    background-color: mediumturquoise;
+/*    background-color: mediumturquoise;*/
+    background-color: #3FE89A;
     width: 105%;
     height: 80px;
     margin-left: -20px;
@@ -82,7 +85,8 @@ html,body{
 #container{
     width: 75%;
     float: right;
-    background-color: lightgreen; 
+/*    background-color: lightgreen; */
+    background-color: #63FF7D; 
     padding: 25px;
 /*    border-radius: 16px;*/
 }
@@ -97,19 +101,14 @@ html,body{
     text-decoration: cancel-underline;
     font-family: sans-serif;
     box-sizing: border-box;
-    color: #fff;
+    color: #222f3e;
     outline: none;
-    background-color: mediumblue;
-    border-radius: 5px;
+/*    background-color: mediumblue;*/
+    background-color: #fff;
+    border-radius: 2px;
 /*    text-transform: uppercase; Texto mayusculas*/
+/* no sirve height ni weight */
 }
 .btnaccion:hover{
     opacity: 0.9;
 }
-/*#form{
-    width: 75%;
-    margin: auto;
-}
-#form-row{
-    margin-left: 18%;
-}*/
