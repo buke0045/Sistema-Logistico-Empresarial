@@ -130,7 +130,7 @@ public class Product {
      */
     public void setImage(String fileName,InputStream in) {
         
-        try{  
+/*        try{  
             ServletContext servC= (ServletContext)FacesContext.getCurrentInstance().getExternalContext().getContext();
             String serverURL = servC.getRealPath("")+File.separatorChar+"resources"+
                     File.separatorChar+"img"+File.separatorChar; //\\localhost\WebApplication2\resources\img\
@@ -149,5 +149,8 @@ public class Product {
              ex.printStackTrace();
         }
     }
+        NO WORKS
+*/
+    this.image = null;
     
 }
