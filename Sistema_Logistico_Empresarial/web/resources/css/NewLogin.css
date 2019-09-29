@@ -39,7 +39,6 @@ body{
     background: #fff;
 }
 
-
 .login-button{
     display: block;
     width: 100%;
@@ -56,6 +55,3 @@ body{
 .login-button:hover{
     background-position: right;
 }
-
-
-
