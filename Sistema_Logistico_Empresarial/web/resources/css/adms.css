@@ -1,0 +1,93 @@
+html,body{
+    margin: 15px; 
+    padding:0px; 
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    background: #112c38;
+}
+
+.nav{
+    height: 130px;
+    background-color: #00cccc;
+}
+
+.logo{
+    margin: 15px;
+}
+
+.btnMenu{
+    margin: 40px 0px 0px 550px;
+    border: none;
+    display: inline;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    width: 150px;
+    height: 60px;
+    border: none;
+    color: #fff;
+    outline: none;
+    background-color: #222f3e;
+}
+.btnAcercaDe{
+    margin: 30px;
+    border: none;
+    display: inline;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    width: 150px;
+    height: 60px;
+    border: none;
+    color: #fff;
+    outline: none;
+    background-color: #222f3e;
+}
+.btnCerrarSesion{
+    margin: 30px;
+    border: none;
+    display: inline;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    width: 150px;
+    height: 60px;
+    border: none;
+    color: #fff;
+    outline: none;
+    background-color: #222f3e;
+}
+
+#header{
+    height: 100px;
+    background-color: mediumblue;
+}
+#navigation{
+    background-color: mediumturquoise;
+    width: 25%;
+    height: 450px;
+    float: left;
+}
+.text-center{
+    background-color: mediumturquoise;
+    width: 105%;
+    height: 80px;
+    margin-left: -20px;
+}
+.text-center:hover{
+    background-color: turquoise;
+}
+#container{
+    width: 75%;
+    float: right;
+    background-color: lightgreen; 
+    padding: 25px;
+/*    border-radius: 16px;*/
+}
+
+#form{
+    width: 75%;
+    margin: auto;
+}
+#form-row{
+    margin-left: 18%;
+}
