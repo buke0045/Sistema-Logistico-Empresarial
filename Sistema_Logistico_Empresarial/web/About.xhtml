@@ -4,37 +4,60 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <h:outputStylesheet library="css" name="naveg.css"  />
+        <h:outputStylesheet library="css" name="add.css"  />
+        <title>Acerca de</title>
     </h:head>
     <h:body>
-            <h:form id="form">
-                <div id="form-row" class="form-row">
-                    <div class="info">
-                        Nombre del sistema:
-                    </div>
-                    <div class="dato">
-                        Sistema Logistico Empresarial?
-                    </div>
-                    
-                    <div class="info">
-                        Version:
-                    </div>
-                    <div class="dato">
-                        1.0?, puede salir de git
-                    </div>
-                    
-                    <div class="info">
-                        Desarrolladores:
-                    </div>
-                    <div class="dato">
-                        Marco Alvarado
-                    </div>
-                    <div class="dato">
-                        Juan Ruiz
-                    </div>
-                    
+        <h:form class="principal-form">
+                
+            <nav class="nav">
+
+            <h:graphicImage height="100" width="100" styleClass="logo" value="Imgs/logo.jpg" />
+
+                <div class="derecha">
+
+                <h:commandButton value="Menu Principal" styleClass="btnMenu" action="principal.xhtml"/>
+
+                <h:commandButton value="Acerca de" styleClass="btnderecha" action="About.xhtml"/>
+
+                <h:commandButton value="Cerrar sesion" styleClass="btnderecha" action="NewLogin.xhtml"/>
+
                 </div>
+            </nav>
+        </h:form>
+        
+        <div id="wrapper">
+            <div id="header">
+                <h1>Nombre del sistema:</h1>
+                <h3>Sistema Logistico Empresarial</h3>
+                <h1>Version:</h1>
+                <h3>1.0</h3>
+                <h1>Desarrolladores:</h1>
+                <h3>
+                    Marco Alvarado
+                    Juan Ruiz
+                </h3>
+                
+            </div>
+        <div id="navigation">
+            <h:form>    
+
+                <ul  class="text-center">
+
+                <h:commandButton value="Administración de Usuarios" styleClass="text-center" action="AdmUsuario.xhtml"/>
+                
+                <h:commandButton value="Administración de Categorías" styleClass="text-center" action="AdmCategories.xhtml"/>
+
+                <h:commandButton value="Administración de Productos" styleClass="text-center" action="AdmProducts.xhtml"/>
+
+                <h:commandButton value="Administración de Departamentos" styleClass="text-center" action="AdmDepartments.xhtml"/>
+
+                </ul>
             </h:form>
+        </div>
+        </div>
+            
     </h:body>
 </html>
 
