@@ -48,7 +48,7 @@
                     <h:messages globalOnly="true" />
                     
                     <h:form class="form">
-                        <div class="form-row">
+                        <div id="form-row" class="form-row">
                             <div class="col-sm-2 col-form-label">Nombre de Usuario:</div>
                             <div class="form-group col-md-4">
                                     <h:inputText value="#{user.username}" class="form-control" id="name"
@@ -56,7 +56,7 @@
                             </div>
                             <div class="col-sm-6 col-form-label text-danger"><h:message for="name" /></div>
                         </div>
-                        <div class="form-row">
+                        <div id="form-row" class="form-row">
                             <div class="col-sm-2 col-form-label">Correo:</div>
                             <div class="form-group col-md-4">
                                     <h:inputText value="#{user.email}" class="form-control" id="email"
@@ -64,7 +64,7 @@
                             </div>
                             <div class="col-sm-4 col-form-label text-danger"><h:message for="email" /></div>
                         </div>
-                        <div class="form-row">
+                        <div id="form-row" class="form-row">
                             <div class="col-sm-2 col-form-label">Contraseña:</div>
                             <div class="form-group col-md-4">
                                     <h:inputSecret value="#{user.password}" class="form-control" id="password"
@@ -76,17 +76,18 @@
                             <h:inputHidden value="#{user.name}" />
                             <h:inputHidden value="#{user.surname}" />
                             <h:inputHidden value="#{user.gender}" />
-                            <div class="form-row">
-                                <div class="form-group col-sm-2">
-                                    <h:commandButton value="Guardar" class="btn btn-primary" action="#{userController.updateUser(user)}"/>
-                                </div>
-                                <div class="form-group col-sm-2">
-
-                                    <h:commandButton value="Volver" immediate="true" action="AdmUsuario.xhtml" class="btn btn-primary float-lg-right"/>
-
-                                </div>
-                                
+                            
+                        <div id="form-row" class="form-row">
+                            <div class="form-group col-md-5">
+                                <h:commandButton value="Guardar" class="btn btn-primary" action="#{userController.updateUser(user)}"/>
                             </div>
+                            <div class="form-group col-md-3 text-right">
+
+                                <h:commandButton value="Volver" immediate="true" action="AdmUsuario.xhtml" class="btn btn-primary float-lg-right"/>
+
+                            </div>
+                                
+                        </div>
                             
                     </h:form>                
             </div>
