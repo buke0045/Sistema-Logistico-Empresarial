@@ -8,24 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
-
-->Crear base de datos:
-
-USE sistema_logistico_empresarial;
-CREATE TABLE categorias(
-    codigo int(255) AUTO_INCREMENT NOT NULL,
-    descripcion varchar(50) NOT NULL,
-    bloque varchar(100) NOT NULL,
-    CONSTRAINT pk_users PRIMARY KEY(codigo)
-)ENGINE=INNODB;
-
--> Llenar 1 dato:
-
-INSERT INTO categorias(codigo, descripcion, bloque)
-VALUES(1,'Prod1','B1')
-*/
-
 public class CategoryDAO extends Conexion{
 
     public CategoryDAO() throws Exception{

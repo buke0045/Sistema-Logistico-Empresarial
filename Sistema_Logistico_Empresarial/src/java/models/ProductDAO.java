@@ -13,25 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.imageio.ImageIO;
 
-/*
--> Creacion de base:
-USE sistema_logistico_empresarial;
-CREATE TABLE product(
-    code int(255) AUTO_INCREMENT NOT NULL,
-    description varchar(50) NOT NULL,
-    category varchar(100) NOT NULL,
-    currentExist int(50) NOT NULL,
-    minExist int(50) NOT NULL,
-    maxExist int(50) NOT NULL,
-    CONSTRAINT pk_users PRIMARY KEY(code)
-)ENGINE=INNODB;
-
-->Primer dato:
-INSERT INTO product(code, description, category, currentExist, minExist, maxExist)
-VALUES(1,'1','1', '1', 1, '1@1.com')
-
-*/
-
 public class ProductDAO extends Conexion{
     
     public ProductDAO() throws Exception{

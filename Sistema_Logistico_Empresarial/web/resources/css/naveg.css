@@ -1,6 +1,5 @@
 .nav{
     height: 130px;
-/*    background-color: #00cccc;*/
     background-color: black;
 }
 .logo{
@@ -20,7 +19,6 @@
     outline: none;
     background-color: #222f3e;
     border-radius: 5px;
-/*    text-transform: uppercase; Texto mayusculas*/
 }
 .btnMenu:hover{
     opacity: 0.9;
@@ -39,14 +37,12 @@
     outline: none;
     background-color: #222f3e;
     border-radius: 5px;
-/*    text-transform: uppercase;*/
 }
 .btnderecha:hover{
     opacity: 0.9;
 }
 #header{
     height: 100px;
-/*    background-color: mediumblue;*/
     float: right;
     width: 75%;
     text-align: center;
@@ -54,7 +50,6 @@
     padding: 20px;
 }
 #navigation{
-/*    background-color: mediumturquoise;*/
     padding: 20px 0px;
     background-color: #084D75;
     width: 25%;
@@ -62,7 +57,6 @@
     float: left;
 }
 .text-center{
-/*    background-color: mediumturquoise;*/
     background-color: #0EB2D0;
     width: 105%;
     height: 80px;

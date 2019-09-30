@@ -18,7 +18,7 @@ public class FileManageBean{
         try{
            cargar(event.getFile().getFileName(),event.getFile().getInputstream()); 
            FacesMessage msg = new FacesMessage("El archivo se ha subido con exito");
-           FacesContext.getCurrentInstance().addMessage(null, msg);// Me faltó publicar el mensaje en la instancia
+           FacesContext.getCurrentInstance().addMessage(null, msg);
         }catch(IOException e){
            
         }

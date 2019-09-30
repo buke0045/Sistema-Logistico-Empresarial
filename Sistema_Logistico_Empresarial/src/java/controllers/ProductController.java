@@ -14,11 +14,6 @@ import javax.faces.context.FacesContext;
 import models.Product;
 import models.ProductDAO;
 
-// AGREGAR(falta),
-// MOSTRAR(falta),
-// MODIFICAR(falta),
-// ELIMINAR(falta)
-
 @ManagedBean
 @SessionScoped
 public class ProductController {

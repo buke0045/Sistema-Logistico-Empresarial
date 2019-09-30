@@ -8,25 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
--> Creacion de base:
-USE sistema_logistico_empresarial;
-CREATE TABLE department(
-    code int(255) AUTO_INCREMENT NOT NULL,
-    name varchar(50) NOT NULL,
-    manager varchar(100) NOT NULL,
-    location varchar(100) NOT NULL,
-    phone int(50) NOT NULL,
-    email varchar(100) NOT NULL,
-    CONSTRAINT pk_users PRIMARY KEY(code)
-)ENGINE=INNODB;
-
-->Primer dato:
-INSERT INTO department(code, name, manager, location, phone, email)
-VALUES(1,'1','1', '1', 1, '1@1.com')
-
-*/
-
 public class DepartmentDAO extends Conexion{
     
     public DepartmentDAO() throws Exception{
