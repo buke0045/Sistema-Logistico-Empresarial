@@ -4,32 +4,64 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-	<title>Actualizar Departamento</title>
-	
-	<h:outputStylesheet library="css" name="style.css"  />
-	<h:outputStylesheet library="css" name="add-student-style.css"  />
-	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
+        <h:outputStylesheet library="css" name="naveg.css"/>
+        <h:outputStylesheet library="css" name="add.css"  />
+	<title>Modificar Departamento</title>
 </h:head>
 
 <h:body>
+<h:form class="principal-form">
+                
+            <nav class="nav">
 
-	<div id="wrapper">
-		<div id="header">
-			<h2>Universidad Nacional</h2>
-		</div>
-	</div>
-	
+            <h:graphicImage height="100" width="100" styleClass="logo" value="Imgs/logo.jpg" />
+
+            <div class="derecha">
+
+            <h:commandButton value="Menu Principal" styleClass="btnMenu" action="principal.xhtml"/>
+
+            <h:commandButton value="Acerca de" styleClass="btnderecha" action="About.xhtml"/>
+
+            <h:commandButton value="Cerrar sesion" styleClass="btnderecha" action="NewLogin.xhtml"/>
+
+            </div>
+            </nav>
+        </h:form>
+        
+        <div id="wrapper">
+            <div id="header">
+                <h1>Modificar Departamento</h1>
+            </div>
+        <div id="navigation">
+            <h:form>    
+
+                <h:commandButton value="Administración de Usuarios" styleClass="text-center" action="AdmUsuario.xhtml"/>
+                
+                <h:commandButton value="Administración de Categorias" styleClass="text-center" action="AdmCategories.xhtml"/>
+
+                <h:commandButton value="Administración de Productos" styleClass="text-center" action="AdmProducts.xhtml"/>
+
+            </h:form>
+            
+        </div>
 	<div id="container">
 		<h3>Actualización de departamento</h3>
 
 		<h:messages globalOnly="true" />
 
 		<h:form id="form" style="margin-top: 10px;" >
-			<h:panelGrid columns="6">
 			
+                    <div id="form-row" class="form-row">
+                            <div class="col-sm-2 col-form-label">Nombre de Usuario:</div>
+                            <div class="form-group col-md-4">
+                                    <h:inputText value="#{user.username}" class="form-control" id="name"
+                                              required="true" requiredMessage="* Campo obligatorio *"/> 
+                            </div>
+                            <div class="col-sm-6 col-form-label text-danger"><h:message for="name" /></div>
+                        </div>
+                    
+                    
 				<h:outputLabel>Codigo</h:outputLabel> <h:inputText value="#{department.code}" id="code" /> <h:message for="code" />
 	
 				<h:outputLabel>Nombre</h:outputLabel> <h:inputText value="#{department.name}" id="name" /> <h:message for="name" />
@@ -48,13 +80,23 @@
 				
 				 <h:commandButton value="Guardar" styleClass="save" action="#{departmentController.updateDepartment(department)}"/>
 			
-			</h:panelGrid>
-		</h:form>
+                            <div id="form-row" class="form-row">
+                            <div class="form-group col-md-5">
+                                <h:commandButton value="Guardar" class="btn btn-primary" action="#{departmentController.updateDepartment(department)}"/>
+                            </div>
+                            <div class="form-group col-md-3 text-right">
+
+                                <h:commandButton value="Volver" immediate="true" action="AdmDepartments.xhtml" class="btn btn-primary float-lg-right"/>
+
+                            </div>
+                                
+                        </div>
+                </h:form>
 
 		<div style="clear: both;"></div>
 
-		<p><h:outputLink value="AdmDepartments.xhtml">Regresar al listado</h:outputLink></p>
 
+	</div>	
 	</div>	
 </h:body>
 </html>

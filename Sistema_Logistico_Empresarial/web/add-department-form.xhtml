@@ -25,7 +25,7 @@
 
                 <h:commandButton value="Acerca de" styleClass="btnderecha" action="About.xhtml"/>
 
-                <h:commandButton value="Cerrar sesion" styleClass="btnderecha" action="newLogin.xhtml"/>
+                <h:commandButton value="Cerrar sesion" styleClass="btnderecha" action="NewLogin.xhtml"/>
 
                 </div>
             </nav>
@@ -33,19 +33,19 @@
         
         <div id="wrapper">
             <div id="header">
-                <h1>Registrar Producto</h1>
+                <h1>Registrar Departamento</h1>
             </div>
         <div id="navigation">
             <h:form>    
 
                 <ul  class="text-center">
 
+                <h:commandButton value="Administración de Usuarios" styleClass="text-center" action="AdmUsuario.xhtml"/>
+                
                 <h:commandButton value="Administración de Categorías" styleClass="text-center" action="AdmCategories.xhtml"/>
 
                 <h:commandButton value="Administración de Productos" styleClass="text-center" action="AdmProducts.xhtml"/>
 
-                <h:commandButton value="Administración de Departamentos" styleClass="text-center" action="AdmDepartments.xhtml"/>
-                
                 </ul>
             </h:form>
         </div>
@@ -89,7 +89,7 @@
                         <h:commandButton value="Registrar" class="btn btn-primary" action="#{departmentController.addDepartment(department)}"/> 
                     </div>                     
                     <div class="form-group col-md-3 text-right">
-                        <h:commandButton immediate="true" value="Volver" action="AdmUsuario.xhtml" class="btn btn-primary"/>
+                        <h:commandButton immediate="true" value="Volver" action="AdmDepartments.xhtml" class="btn btn-primary"/>
                     </div>
                     </div>
 		</h:form>
