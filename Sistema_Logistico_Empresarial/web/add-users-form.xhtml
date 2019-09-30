@@ -5,22 +5,49 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
-        <h:outputStylesheet library="css" name="add-user-style.css"  />
+        <h:outputStylesheet library="css" name="naveg.css"  />
+        <h:outputStylesheet library="css" name="add.css"  />
         
         <title>Registrar Usuario</title>
     </h:head>
     <h:body>
-        <div id="header"></div>
+        
+        <h:form class="principal-form">
+                
+            <nav class="nav">
+
+            <h:graphicImage height="100" width="100" styleClass="logo" value="Imgs/logo.jpg" />
+
+                <div class="derecha">
+
+                <h:commandButton value="Menu Principal" styleClass="btnMenu" action="principal.xhtml"/>
+
+                <h:commandButton value="Acerca de" styleClass="btnderecha" action="About.xhtml"/>
+
+                <h:commandButton value="Cerrar sesion" styleClass="btnderecha" action="newLogin.xhtml"/>
+
+                </div>
+            </nav>
+        </h:form>
+        
+        <div id="wrapper">
+            
         <div id="navigation">
-            <ul>
-                <li>Administración de Usuarios</li>
-                <li>Administración de Categorías</li>
-                <li>Administracion de Productos</li>
-                <li>Administracion de Departamentos</li>
-            </ul>
+            <h:form>    
+
+                <ul  class="text-center">
+
+                <h:commandButton value="Administración de Categorías" styleClass="text-center" action="AdmCategories.xhtml"/>
+
+                <h:commandButton value="Administración de Productos" styleClass="text-center" action="AdmProducts.xhtml"/>
+
+                <h:commandButton value="Administración de Departamentos" styleClass="text-center" action="AdmDepartments.xhtml"/>
+                
+                </ul>
+            </h:form>
         </div>
         <div id="container">
-            <h2 class="text-center">Registrar Usuario</h2>
+            <h2 class="txt">Registrar Usuario</h2>
             <h:messages globalOnly="true"/>
             <br></br>
             <br></br>
@@ -59,16 +86,17 @@
                     </div>
                 
                 <div id="form-row" class="form-row">
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-5">
+                        <h:commandButton value="Registrar" class="btn btn-primary" action="#{userController.addUser(user)}"/> 
+                    </div>                     
+                    <div class="form-group col-md-3 text-right">
                         <h:commandButton immediate="true" value="Volver" action="AdmUsuario.xhtml" class="btn btn-primary"/>
                     </div>
-                    <div class="form-group col-md-5 text-right">
-                        <h:commandButton value="Registrar" class="btn btn-primary" action="#{userController.addUser(user)}"/> 
-                    </div> 
                 </div>
             </h:form>
             
             
+        </div>
         </div>
     </h:body>
 </html>

@@ -1,33 +1,7 @@
-
-#navigation ul{
-    padding: 0px;
-}
-#navigation li{
-    list-style: none;
-    padding-top: 2em;
-    padding-bottom: 2em;
-}
-#container{
-    width: 75%;
-    float: right;
-    background-color: lightgreen; 
-    padding: 25px;
-    border-radius: 16px;
-}
-#form{
-    width: 75%;
-    margin: auto;
-}
-#form-row{
-    margin-left: 18%;
-}
-
-
-
 .nav{
     height: 130px;
 /*    background-color: #00cccc;*/
-    background-color: mediumblue;
+    background-color: black;
 }
 .logo{
     margin: 15px;
@@ -70,26 +44,30 @@
 .btnderecha:hover{
     opacity: 0.9;
 }
-
+#header{
+    height: 100px;
+/*    background-color: mediumblue;*/
+    float: right;
+    width: 75%;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
 #navigation{
 /*    background-color: mediumturquoise;*/
     padding: 20px 0px;
-    background-color: mediumturquoise;
+    background-color: #084D75;
     width: 25%;
-    height: 450px;
+    height: 460px;
     float: left;
 }
 .text-center{
 /*    background-color: mediumturquoise;*/
-    background-color: mediumturquoise;
+    background-color: #0EB2D0;
     width: 105%;
     height: 80px;
     margin-left: -20px;
 }
 .text-center:hover{
-    background-color: turquoise;
-}
-
-.txt{
-    margin-left: 350px;
+    background-color: #12DAFF;
 }
