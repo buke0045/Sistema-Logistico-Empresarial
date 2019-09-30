@@ -35,20 +35,10 @@
 	
 				<h:outputLabel>Descripcion:</h:outputLabel> <h:inputText value="#{product.description}" id="description" /> <h:message for="description" />
 	
-				<h:outputLabel>Categoria:</h:outputLabel> <h:inputText value="#{product.category}" id="category" /> <h:message for="category" />
-                                
-                                <!--
-                                <h:selectOneMenu value="#{product.category}">
-                                    <f:selectItems value="#{category.code}" var="category" itemValue="#{category.code}" itemLabel="#{category.code}" />
+				<h:outputLabel>Categoria:</h:outputLabel>
+                                <h:selectOneMenu id="category" class="form-control" value="#{category.description}">
+                                    <f:selectItems var="descCateg" value="#{categoryController.categories}"  itemValue="#{descCateg.description}" itemLabel="#{descCateg.description}" />
                                 </h:selectOneMenu>
-                                
-                                <div class="form-group col-md-3">
-                                Categoria:
-                                <h:selectOneMenu id="category" class="form-control" value="#{product.category}">
-                                    <f:selectItem value="#{category.toString()}"/>
-                                </h:selectOneMenu>
-                                </div>
-                                -->
                                 
 				<h:outputLabel>Existencia Actual:</h:outputLabel> <h:inputText value="#{product.currentExist}" id="currentExist" /> <h:message for="currentExist" />
 	
