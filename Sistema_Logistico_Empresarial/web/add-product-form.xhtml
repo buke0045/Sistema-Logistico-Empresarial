@@ -38,15 +38,14 @@
 				<h:outputLabel>Codigo:</h:outputLabel> <h:inputText value="#{product.code}" id="code" /> <h:message for="code" />
 	
                                 <h:outputLabel>Descripcion:</h:outputLabel> <h:inputText required="true" requiredMessage="obligatorio" value="#{product.description}" id="description" /> <h:message for="description" />
-	
+                                
 				<h:outputLabel>Categoria:</h:outputLabel>
                                 
-                                <h:selectOneMenu id="gender" class="form-control" value="#{category.description}">
-                                    <f:selectItems var="desc" value="#{categoryController.categories}"  itemValue="#{desc.description}" itemLabel="#{desc.description}" />
+                                <h:selectOneMenu class="form-control" value="#{product.category}">
+                                    <f:selectItems var="desc" value="#{categoryController.categories}" itemValue="#{desc.description}" itemLabel="#{desc.description}" />
                                 </h:selectOneMenu>
                                         <!--
                                         -->
-
 				<h:outputLabel>Existencia Actual:</h:outputLabel> <h:inputText value="#{product.currentExist}" id="currentExist" /> <h:message for="currentExist" />
 	
 				<h:outputLabel>Existencia Minima:</h:outputLabel> <h:inputText value="#{product.minExist}" id="minExist" /> <h:message for="minExist" />
@@ -57,11 +56,14 @@
 				
                                 
                                 <h:outputLabel>Imagen:</h:outputLabel> 
-                                <p:growl id="msg"></p:growl>
-                                <p:fileUpload fileUploadListener="#{fileManageBean.upload}" mode="advanced" 
-                                                    allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="512000" update="msg" id="img"></p:fileUpload>
+                                <p:fileUpload fileUploadListener="#{fileManageBean.upload}" auto="true" 
+                                                    allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="512000" update="msg" id="img"></p:fileUpload>(debe tener el mismo nombre de descripción)
+                                
                                 <h:outputLabel /> <h:commandButton value="Guardar" styleClass="save" action="#{productController.addProduct(product)}"/>
-			
+                                
+                                                   
+     
+                                <p:growl id="msg"></p:growl>
 			</h:panelGrid>
 		</h:form>
 
