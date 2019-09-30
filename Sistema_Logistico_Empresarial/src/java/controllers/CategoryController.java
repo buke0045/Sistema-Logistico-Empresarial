@@ -1,13 +1,6 @@
 
 package controllers;
 
-// DESPLEGAR(falta), y *probar en DAO
-// AGREGAR(falta), y *probar en DAO
-// MODIFICAR(falta),
-// ELIMINAR(falta) y *probar en DAO
-
-// ESCOGER IDIOMA EN EL SPANGLISH XD
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

@@ -21,6 +21,7 @@ public class Conexion{
         private static UserDAO instance;
         private static CategoryDAO instanceC;
         private static DepartmentDAO instanceD;
+        private static ProductDAO instanceP;
 	private DataSource dataSource;
 	private String jndiName = "java:app/sistema_logistico_empresarial";
 	
@@ -46,6 +47,14 @@ public class Conexion{
 		}
 		
 		return instanceD;
+	}
+        
+        public static ProductDAO getInstanceP() throws Exception {
+		if (instanceP == null) {
+			instanceP = new ProductDAO();
+		}
+		
+		return instanceP;
 	}
         
 	public Conexion() throws Exception {		

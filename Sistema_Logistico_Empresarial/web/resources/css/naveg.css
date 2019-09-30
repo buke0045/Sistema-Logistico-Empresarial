@@ -1,0 +1,67 @@
+.nav{
+    height: 130px;
+    background-color: black;
+}
+.logo{
+    margin: 15px;
+}
+.btnMenu{
+    margin: 40px 15px 0px 650px;
+    border: none;
+    display: inline;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    width: 150px;
+    height: 60px;
+    border: none;
+    color: #fff;
+    outline: none;
+    background-color: #222f3e;
+    border-radius: 5px;
+}
+.btnMenu:hover{
+    opacity: 0.9;
+}
+.btnderecha{
+    margin: 15px;
+    border: none;
+    display: inline;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    width: 150px;
+    height: 60px;
+    border: none;
+    color: #fff;
+    outline: none;
+    background-color: #222f3e;
+    border-radius: 5px;
+}
+.btnderecha:hover{
+    opacity: 0.9;
+}
+#header{
+    height: 100px;
+    float: right;
+    width: 75%;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+#navigation{
+    padding: 20px 0px;
+    background-color: #084D75;
+    width: 25%;
+    height: 460px;
+    float: left;
+}
+.text-center{
+    background-color: #0EB2D0;
+    width: 105%;
+    height: 80px;
+    margin-left: -20px;
+}
+.text-center:hover{
+    background-color: #12DAFF;
+}

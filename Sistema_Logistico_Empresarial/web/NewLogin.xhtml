@@ -5,38 +5,31 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
-        
         <title>Login</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
-        <h:outputStylesheet library="css" name="loginStyle.css"  />
+        <h:outputStylesheet library="css" name="NewLogin.css"  />
     </h:head>
     <h:body>
-        <div id="wrapper">
-            <div id="content">
                 <div id="encabezado">
                     <h:messages globalOnly="true" />
                 </div>
                 
-                <div id="cuadro_login">
-                    <h1>Ingrese sus datos</h1>        
-                    <br></br>
-                    <h:form>
+                    <h:form class="login-form">
                         
+                        <h:graphicImage height="150" width="150" styleClass="logo" value="Imgs/logo.jpg" />
+                        <br></br><br></br><br></br><br></br>
                         <h:inputText id="username" class="form-control" pt:placeholder="Username" required="true" requiredMessage="* Campo Obligatorio *" value="#{user.username}"/> 
-                        <p class="text-danger"><h:message for="username"/></p> 
+                        <p class="txtb"><h:message for="username"/></p> 
                         
                         <h:inputSecret id="password" class="form-control" pt:placeholder="Password" required="true" requiredMessage="* Campo Obligatorio *" value="#{user.password}" />
-                        <p class="text-danger"><h:message for="password"/></p>
-                        <br></br>
+                        <p class="txtb"><h:message for="password"/></p>
+                        
                         <h:commandButton value="Ingresar"  styleClass="login-button" action="#{userController.loadUser(user.username, user.password)}"/>
-                        <h:commandButton value="Registrar"  styleClass="login-button" action="add-users-form"/>
+                        <br></br>
+                        <h:commandButton value="Registrarse" immediate="true" styleClass="login-button" action="add-users-form"/>
                        
-                    </h:form> 
-                    <h:form></h:form>
-                </div>
+                    </h:form>
                 
-            </div>
-        </div>
     </h:body>
 </html>
 

@@ -6,46 +6,37 @@
         <title>Vista Principal</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">            
         </link>
-        <h:outputStylesheet library="css" name="add-user-style.css"  />
+        <h:outputStylesheet library="css" name="principal.css"  />
     </h:head>
     <h:body>
-        <div id="header">
-            <ul>
-                <li>Administración de Usuarios</li>
-                <li>Administración de Categorías</li>
-                <li>Administracion de Productos</li>
-                <li>Administracion de Departamentos</li>
-            </ul>
+            
+            <h:form class="principal-form">
+                
+                <nav class="nav">
+                    
+                <h:graphicImage height="100" width="100" styleClass="logo" value="Imgs/logo.jpg" />
 
-            
-        </div>
-        <div id="container">
-            
-             <h:form>
-            <div class="AdmUs">
-            <h1>Administracion de Usuario</h1>
-            <h:commandButton value="Usuario" action="AdmUsuario.xhtml" class="btn btn-primary"/>
-            </div>
-            
-            <div class="AdmCat">
-            <h1>Administracion de Categorias</h1>
-            <h:commandButton value="Categorias" action="AdmCategories.xhtml" class="btn btn-primary"/>
-            </div>
-            
-            <div class="AdmProd">
-            <h1>Administracion de Productos</h1>
-            <h:commandButton value="Productos" action="AdmProductos.xhtml" class="btn btn-primary"/>
-            </div>
+                    <div class="derecha">
 
-            <div class="AdmDep">
-            <h1>Administracion de Departamentos</h1>
-            <h:commandButton value="Departamentos" action="AdmDepartments.xhtml" class="btn btn-primary"/>
-            </div>
-        </h:form>
+                    <h:commandButton value="Acerca de" styleClass="btnAcercaDe" action="About.xhtml"/>
+
+                    <h:commandButton value="Cerrar sesion" styleClass="btnCerrarSesion" action="NewLogin.xhtml"/>
+
+                    </div>
+                </nav>
+            </h:form>
             
+            <h:form class="Admins-form">
+                <h:commandButton value="Administracion de Usuario" styleClass="btnAdm" action="AdmUsuario.xhtml"/>
             
-        </div>
-       
+                <h:commandButton value="Administracion de Categorias" styleClass="btnAdm" action="AdmCategories.xhtml"/>
+            
+                <h:commandButton value="Administracion de Productos" styleClass="btnAdm" action="AdmProducts.xhtml"/>
+
+                <h:commandButton value="Administracion de Departamentos" styleClass="btnAdm" action="AdmDepartments.xhtml"/>
+
+            </h:form>
+                   
     </h:body>
 </html>
 

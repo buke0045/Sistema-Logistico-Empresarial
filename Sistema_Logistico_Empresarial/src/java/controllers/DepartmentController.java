@@ -1,11 +1,6 @@
 
 package controllers;
 
-// VISUALIZAR TODOS(falta),
-// AGREGAR(falta),
-// MODIFICAR(falta),
-// ELIMINAR(falta)
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

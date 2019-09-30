@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:p="http://primefaces.org/ui">
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{categoryController.loadCategories()}"/>
+        </f:metadata>
+<h:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
+
+	<title>Actualizar Producto</title>
+	
+	<h:outputStylesheet library="css" name="naveg.css"/>
+        <h:outputStylesheet library="css" name="add.css"  />
+	
+</h:head>
+
+<h:body>
+
+    <h:form class="principal-form">
+                
+            <nav class="nav">
+
+            <h:graphicImage height="100" width="100" styleClass="logo" value="Imgs/logo.jpg" />
+
+            <div class="derecha">
+
+            <h:commandButton value="Menu Principal" styleClass="btnMenu" action="principal.xhtml"/>
+
+            <h:commandButton value="Acerca de" styleClass="btnderecha" action="About.xhtml"/>
+
+            <h:commandButton value="Cerrar sesion" styleClass="btnderecha" action="NewLogin.xhtml"/>
+
+            </div>
+            </nav>
+        </h:form>
+        
+        <div id="wrapper">
+            <div id="header">
+                <h1>Modificar Producto</h1>
+            </div>
+        <div id="navigation">
+            <h:form>    
+
+                <h:commandButton value="Administración de Categorias" styleClass="text-center" action="AdmCategories.xhtml"/>
+
+                <h:commandButton value="Administración de Productos" styleClass="text-center" action="AdmProducts.xhtml"/>
+
+                <h:commandButton value="Administración de Departamentos" styleClass="text-center" action="AdmDepartments.xhtml"/>
+                
+            </h:form>
+        </div>
+
+	
+	<div id="container">
+
+		<h:messages globalOnly="true" />
+
+                
+		<h:form class="form" enctype="multipart/form-data" >
+                    
+                    <div id="form-row" class="form-row">
+                        <div class="col-sm-2 col-form-label">Codigo:</div>
+                            <div class="form-group col-md-4">
+                                <h:inputText value="#{product.code}" class="form-control" id="code" disabled="true"
+                                              required="true" requiredMessage="* Campo obligatorio *"/> 
+                            </div>
+                        <div class="col-sm-6 col-form-label text-danger"><h:message for="code" /></div>
+                    </div>
+                    <div id="form-row" class="form-row">
+                        <div class="col-sm-2 col-form-label">Descripción:</div>
+                            <div class="form-group col-md-4">
+                                <h:inputText value="#{product.description}" class="form-control" id="desc"
+                                              required="true" requiredMessage="* Campo obligatorio *"/> 
+                            </div>
+                        <div class="col-sm-6 col-form-label text-danger"><h:message for="desc" /></div>
+                    </div>
+                    <div id="form-row" class="form-row">
+                        <div class="col-sm-2 col-form-label">Categoría:</div>
+                            <div class="form-group col-md-4">
+                                <h:selectOneMenu class="form-control" value="#{product.category}">
+                                    <f:selectItems var="desc" value="#{categoryController.categories}" itemValue="#{desc.description}" itemLabel="#{desc.description}" />
+                                </h:selectOneMenu>
+                            </div>
+                        <div class="col-sm-6 col-form-label text-danger"><h:message for="cat" /></div>
+                    </div>
+                    <div id="form-row" class="form-row">
+                        <div class="col-sm-2 col-form-label">Existencia Actual:</div>
+                            <div class="form-group col-md-4">
+                                <h:inputText value="#{product.currentExist}" class="form-control" id="current"
+                                              required="true" requiredMessage="* Campo obligatorio *"/> 
+                            </div>
+                        <div class="col-sm-6 col-form-label text-danger"><h:message for="current" /></div>
+                    </div>
+                    <div id="form-row" class="form-row">
+                        <div class="col-sm-2 col-form-label">Existencia Minima</div>
+                            <div class="form-group col-md-4">
+                                <h:inputText value="#{product.minExist}" class="form-control" id="min"
+                                              required="true" requiredMessage="* Campo obligatorio *"/> 
+                            </div>
+                        <div class="col-sm-6 col-form-label text-danger"><h:message for="min" /></div>
+                    </div>
+                    <div id="form-row" class="form-row">
+                        <div class="col-sm-2 col-form-label">Existencia Máxima</div>
+                            <div class="form-group col-md-4">
+                                <h:inputText value="#{product.maxExist}" class="form-control" id="max"
+                                              required="true" requiredMessage="* Campo obligatorio *"/> 
+                            </div>
+                        <div class="col-sm-6 col-form-label text-danger"><h:message for="max" /></div>
+                    </div>
+                    <div id="form-row" class="form-row">
+                        <div class="col-sm-2 col-form-label">Imagen</div>
+                            <div class="form-group col-md-4">
+                                <p:fileUpload fileUploadListener="#{fileManageBean.upload}" auto="true" 
+                                                    allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="512000" update="msg" id="img"></p:fileUpload>(debe tener el mismo nombre de descripción y ser archivo png)
+                            <p:growl id="msg"></p:growl>
+                            </div>
+                        <div class="col-sm-6 col-form-label text-danger"><h:message for="min" /></div>
+                    </div>
+                    <div id="form-row" class="form-row">
+                        <div class="form-group col-sm-2">
+                            <h:commandButton value="Guardar" class="btn btn-primary" action="#{productController.updateProduct(product)}"/>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <h:commandButton value="Volver" immediate="true" action="AdmProducts.xhtml" class="btn btn-primary float-lg-right"/>
+                        </div>     
+                    </div>
+		</h:form>
+
+		<div style="clear: both;"></div>
+
+        </div>
+	</div>	
+</h:body>
+</html>

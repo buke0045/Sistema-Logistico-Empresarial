@@ -14,11 +14,6 @@ import javax.faces.context.FacesContext;
 import models.User;
 import models.UserDAO;
 
-// VER USERS EXISTENTES(acomodar a un mostrar sin afectar validacion de login),
-// AGREGAR(probar), h
-// MODIFICAR(falta),
-// ELIMINAR(falta)
-
 @ManagedBean
 @SessionScoped
 public class UserController {
@@ -116,7 +111,7 @@ public class UserController {
 		return null;
 	}
 	
-	return "list-students";	
+	return "AdmUsuario?faces-redirect=true";	
     }
     private void addErrorMessage(Exception exc) {
 		FacesMessage message = new FacesMessage("Error: " + exc.getMessage());

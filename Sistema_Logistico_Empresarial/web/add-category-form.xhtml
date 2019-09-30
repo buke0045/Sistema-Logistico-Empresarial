@@ -9,46 +9,97 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Agregar Categoria</title>
-	
-	<h:outputStylesheet library="css" name="style.css"  />
-	<h:outputStylesheet library="css" name="add-student-style.css"  />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
+
+	<h:outputStylesheet library="css" name="naveg.css"  />
+        <h:outputStylesheet library="css" name="add.css"  />
 	
 </h:head>
 
 <h:body>
 
-	<div id="wrapper">
-		<div id="header">
-			<h2>Universidad Nacional</h2>
-		</div>
-	</div>
-	
-	<div id="container">
-		<h3>Agregar Categoria</h3>
+        <h:form class="principal-form">
+                
+            <nav class="nav">
 
-		<h:messages globalOnly="true" />
+            <h:graphicImage height="100" width="100" styleClass="logo" value="Imgs/logo.jpg" />
 
-		<h:form id="form" style="margin-top: 10px;" >
-			<h:panelGrid columns="3">
-			
-				<h:outputLabel>Codigo:</h:outputLabel> <h:inputText value="#{category.code}" id="code" /> <h:message for="code" />
-	
-				<h:outputLabel>Descripcion:</h:outputLabel> <h:inputText value="#{category.description}" id="description" /> <h:message for="description" />
-	
-				<h:outputLabel>Bloque:</h:outputLabel> <h:inputText value="#{category.block}" id="block" 
-									required="true"
-            							requiredMessage="Campo obligatorio."/> 	<h:message for="block" />
-				
+                <div class="derecha">
+
+                <h:commandButton value="Menu Principal" styleClass="btnMenu" action="principal.xhtml"/>
+
+                <h:commandButton value="Acerca de" styleClass="btnderecha" action="About.xhtml"/>
+
+                <h:commandButton value="Cerrar sesion" styleClass="btnderecha" action="newLogin.xhtml"/>
+
+                </div>
+            </nav>
+        </h:form>
+        
+        <div id="wrapper">
+            <div id="header">
+                <h1>Registrar Categoria</h1>
+            </div>
+        <div id="navigation">
+            <h:form>    
+
+                <ul  class="text-center">
+
+                <h:commandButton value="Administración de Usuarios" styleClass="text-center" action="AdmUsuario.xhtml"/>
+
+                <h:commandButton value="Administración de Productos" styleClass="text-center" action="AdmProducts.xhtml"/>
+
+                <h:commandButton value="Administración de Departamentos" styleClass="text-center" action="AdmDepartments.xhtml"/>
+                
+                </ul>
+            </h:form>
+        </div>
+        <div id="container">
+            <h:messages globalOnly="true"/>
+            <br></br>
+            <br></br>
+            <h:form class="form">
+                        <div id="form-row" class="form-row">
+                            <div class="col-sm-2 col-form-label">Codigo:</div>
+                            <div class="form-group col-md-4">
+                                <h:inputText value="#{category.code}" class="form-control" id="code"
+                                              required="true" requiredMessage="* Campo obligatorio *"/> 
+                            </div>
+                            <div class="col-sm-6 col-form-label text-danger"><h:message for="code" /></div>
+                        </div>
+                        <div id="form-row" class="form-row">
+                            <div class="col-sm-2 col-form-label">Descripción</div>
+                            <div class="form-group col-md-4">
+                                <h:inputText value="#{category.description}" class="form-control" id="desc"
+                                              required="true" requiredMessage="* Campo obligatorio *"/> 
+                            </div>
+                            <div class="col-sm-4 col-form-label text-danger"><h:message for="desc" /></div>
+                        </div>
+                        <div id="form-row" class="form-row">
+                            <div class="col-sm-2 col-form-label">Bloque:</div>
+                            <div class="form-group col-md-4">
+                                <h:inputText value="#{category.block}" class="form-control" id="password"
+                                              required="true" requiredMessage="* Campo obligatorio *"/> 
+                            </div>
+                            <div class="col-sm-6 col-form-label text-danger"><h:message for="password" /></div>
+                        </div>
+                        
+                            
+                        <div id="form-row" class="form-row">
+                            <div class="form-group col-md-5">
+                                <h:commandButton value="Guardar" class="btn btn-primary" action="#{categoryController.addCategory(category)}"/>
+                            </div>
+                            <div class="form-group col-md-3 text-right">
+
+                                <h:commandButton value="Volver" immediate="true" action="AdmCategories.xhtml" class="btn btn-primary float-lg-right"/>
+
+                            </div>
                                 
-                                <h:outputLabel /> <h:commandButton value="Guardar" styleClass="save" action="#{categoryController.addCategory(category)}"/>
-			
-			</h:panelGrid>
-		</h:form>
-
-		<div style="clear: both;"></div>
-
-		<p><h:outputLink value="AdmCategories.xhtml">Regresar al listado</h:outputLink></p>
+                        </div>
+                            
+                    </h:form> 
 
 	</div>	
+    </div>
 </h:body>
 </html>

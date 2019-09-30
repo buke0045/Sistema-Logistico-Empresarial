@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
+        <h:outputStylesheet library="css" name="naveg.css"  />
+        <h:outputStylesheet library="css" name="add.css"  />
+        <title>Acerca de</title>
+    </h:head>
+    <h:body>
+        <h:form class="principal-form">
+                
+            <nav class="nav">
+
+            <h:graphicImage height="100" width="100" styleClass="logo" value="Imgs/logo.jpg" />
+
+                <div class="derecha">
+
+                <h:commandButton value="Menu Principal" styleClass="btnMenu" action="principal.xhtml"/>
+
+                <h:commandButton value="Acerca de" styleClass="btnderecha" action="About.xhtml"/>
+
+                <h:commandButton value="Cerrar sesion" styleClass="btnderecha" action="NewLogin.xhtml"/>
+
+                </div>
+            </nav>
+        </h:form>
+        
+        <div id="wrapper">
+            <div id="header">
+                <h1>Nombre del sistema:</h1>
+                <h3>Sistema Logistico Empresarial</h3>
+                <br></br>
+                <h1>Version:</h1>
+                <h3>1.0</h3>
+                <br></br>
+                <h1>Desarrolladores:</h1>
+                <h3>Marco Alvarado</h3>
+                <h3>Juan Ruiz</h3>
+            </div>
+        <div id="navigation">
+            <h:form>    
+
+                <ul  class="text-center">
+
+                <h:commandButton value="Administración de Usuarios" styleClass="text-center" action="AdmUsuario.xhtml"/>
+                
+                <h:commandButton value="Administración de Categorías" styleClass="text-center" action="AdmCategories.xhtml"/>
+
+                <h:commandButton value="Administración de Productos" styleClass="text-center" action="AdmProducts.xhtml"/>
+
+                <h:commandButton value="Administración de Departamentos" styleClass="text-center" action="AdmDepartments.xhtml"/>
+
+                </ul>
+            </h:form>
+        </div>
+        </div>
+            
+    </h:body>
+</html>
+
