@@ -17,7 +17,13 @@ html,body{
     padding: 25px;
 /*    border-radius: 16px;*/
 }
-
+#imagen{
+    width: 100px;
+    height: 100px;
+}
+#imagen img{
+    width: 80%;
+}
 .btnaccion{
     margin: 10px;
     border: none;

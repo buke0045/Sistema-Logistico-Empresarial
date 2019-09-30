@@ -82,13 +82,14 @@
                             <f:facet name="header">Existencia Maxima</f:facet>
                             #{tempProducts.maxExist}
                         </h:column>
-
+                        
                         <h:column>
                             <f:facet name="header">Imagen</f:facet>
+                            <div id="imagen">
                             <h:graphicImage id="img-product" value="resources/img/#{tempProducts.description.toString()}.png" />
-
+                            </div>
                         </h:column>
-
+                        
                         <h:column>
                             <f:facet name="header">Accion</f:facet>
                             <h:commandLink value="Modificar"
