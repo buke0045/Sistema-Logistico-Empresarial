@@ -1,15 +1,8 @@
 
 package models;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+
 import javax.faces.bean.ManagedBean;
-import java.sql.Blob;
-import javax.faces.context.FacesContext;
-import javax.servlet.ServletContext;
 
 @ManagedBean
 public class Product {
@@ -19,19 +12,17 @@ public class Product {
     private int currentExist;
     private int minExist;
     private int maxExist;
-    private Blob image;
     
     public Product(){
     
     }
-    public Product(int code, String description, String category, int currentExist, int minExist, int maxExist, Blob image){
+    public Product(int code, String description, String category, int currentExist, int minExist, int maxExist){
         this.code = code;
         this.description = description;
         this.category = category;
         this.currentExist = currentExist;
         this.minExist = minExist;
         this.maxExist = maxExist;
-        this.image = null;
     }
 
     /**
@@ -116,41 +107,5 @@ public class Product {
      */
     public void setMaxExist(int maxExist) {
         this.maxExist = maxExist;
-    }
-
-    /**
-     * @return the image
-     */
-    public Blob getImage() {
-        return image;
-    }
-
-    /**
-     * @param image the image to set
-     */
-    public void setImage(Blob image){ /*(String fileName,InputStream in) {
-        
-        try{  
-            ServletContext servC= (ServletContext)FacesContext.getCurrentInstance().getExternalContext().getContext();
-            String serverURL = servC.getRealPath("")+File.separatorChar+"resources"+
-                    File.separatorChar+"img"+File.separatorChar; //\\localhost\WebApplication2\resources\img\
-            OutputStream out= new FileOutputStream(new File(serverURL+fileName));
-            int read=0;
-            byte[] bytes=new byte[1024];
-            while((read=in.read(bytes))!=-1){
-                out.write(bytes,0,read);
-            }
-            in.close();
-            out.flush();
-            out.close();
-            
-            this.image = (Blob) out;
-        }catch(IOException ex){
-             ex.printStackTrace();
-        }
-    }
-        NO WORKS
-*/
-        this.image = image;
     }
 }
