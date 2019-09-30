@@ -85,7 +85,8 @@
 
                         <h:column>
                             <f:facet name="header">Imagen</f:facet>
-                            #{tempProducts.image}
+                            <h:graphicImage id="img-product" value="resources/img/#{tempProducts.description.toString()}.png" />
+
                         </h:column>
 
                         <h:column>

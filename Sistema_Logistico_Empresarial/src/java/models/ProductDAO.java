@@ -1,6 +1,9 @@
 
 package models;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import javax.imageio.ImageIO;
 
 /*
 -> Creacion de base:
@@ -43,7 +47,7 @@ public class ProductDAO extends Conexion{
 	try {
 		myConn = this.getConnection();
 
-		String sql = "insert into product (code, description, category, currentExist, minExist, maxExist, image) values (?, ?, ?, ?, ?, ?, ?)";
+		String sql = "insert into product (code, description, category, currentExist, minExist, maxExist) values (?, ?, ?, ?, ?, ?)";
 
 		myStmt = myConn.prepareStatement(sql);
 
@@ -53,8 +57,6 @@ public class ProductDAO extends Conexion{
 		myStmt.setInt(4, pProduct.getCurrentExist());
 		myStmt.setInt(5, pProduct.getMinExist());
 		myStmt.setInt(6, pProduct.getMaxExist());
-		myStmt.setBlob(7, pProduct.getImage());
-		
 		myStmt.execute();			
 	}
 	finally {
@@ -88,9 +90,7 @@ public class ProductDAO extends Conexion{
                         int currentExist = myRs.getInt("currentExist");
                         int minExist = myRs.getInt("minExist");
                         int maxExist = myRs.getInt("maxExist");
-                        Blob image = myRs.getBlob("image");
-                        
-                        Product tempProduct = new Product(code, description, category, currentExist, minExist, maxExist, image);
+                        Product tempProduct = new Product(code, description, category, currentExist, minExist, maxExist);
 
                         Prods.add(tempProduct);
                 }
@@ -131,9 +131,7 @@ public class ProductDAO extends Conexion{
                                 int currentExist = myRs.getInt("currentExist");
                                 int minExist = myRs.getInt("minExist");
                                 int maxExist = myRs.getInt("maxExist");
-                                Blob image = myRs.getBlob("image");
-
-				prod = new Product(code, description, category, currentExist, minExist, maxExist, image);
+				prod = new Product(code, description, category, currentExist, minExist, maxExist);
                         }
 			else {
 				throw new Exception("Could not find product code: " + prodCode);
@@ -155,7 +153,7 @@ public class ProductDAO extends Conexion{
                 myConn = this.getConnection();
 
                 String sql = "update product "
-                                        + " set code=?, description=?, category=?, currentExist=?, minExist=?, maxExist=?, image=? where code=?";
+                                        + " set code=?, description=?, category=?, currentExist=?, minExist=?, maxExist=? where code=?";
                 myStmt = myConn.prepareStatement(sql);
 
                 myStmt.setInt(1, pProduct.getCode());
@@ -164,8 +162,7 @@ public class ProductDAO extends Conexion{
 		myStmt.setInt(4, pProduct.getCurrentExist());
 		myStmt.setInt(5, pProduct.getMinExist());
 		myStmt.setInt(6, pProduct.getMaxExist());
-		myStmt.setBlob(7, pProduct.getImage());
-                myStmt.setInt(8, pProduct.getCode());
+                myStmt.setInt(7, pProduct.getCode());
 
                 myStmt.execute();
         }
