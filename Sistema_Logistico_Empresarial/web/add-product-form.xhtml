@@ -37,7 +37,7 @@
         
         <div id="wrapper">
             <div id="header">
-                <h1>Registrar Usuario</h1>
+                <h1>Registrar Producto</h1>
             </div>
         <div id="navigation">
             <h:form>    
@@ -58,45 +58,60 @@
 
                 <h:form id="form" enctype="multipart/form-data" style="margin-top: 10px;" >
 			
-                                <div id="form-row" class="form-row">
-                                    <div class="form-group col-md-5">
-                                    <h:outputLabel>Codigo:</h:outputLabel> <h:inputText value="#{product.code}" id="code" /> <h:message for="code" />
-                                    </div>
-                                    <div class="form-group col-md-5">
-                                    <h:outputLabel>Descripcion:</h:outputLabel> <h:inputText required="true" requiredMessage="obligatorio" value="#{product.description}" id="description" /> <h:message for="description" />
-                                    </div>
-                                </div>
+                    <div id="form-row" class="form-row">
+                    <div class="form-group col-md-5">
+                        Codigo: <h:inputText id="code" class="form-control" required="true" requiredMessage="* Campo Obligatorio *" value="#{product.code}"/>
+                        <h:messages for="code"/>
+                    </div>
+                    <div class="form-group col-md-5">
+                        Descripcion: <h:inputText  id="description" class="form-control" required="true" requiredMessage="* Campo Obligatorio *" value="#{product.description}"/>
+                        <h:messages for="description"/>
+                    </div>
+                    </div>
+			
+                    <div id="form-row" class="form-row">
+                    <div class="form-group col-md-5">
+                        Categoria:
+                        <h:selectOneMenu class="form-control" value="#{product.category}">
+                        <f:selectItems var="desc" value="#{categoryController.categories}" itemValue="#{desc.description}" itemLabel="#{desc.description}" />
+                        </h:selectOneMenu>
+                    </div>
+                    <div class="form-group col-md-5">
+                        Existencia Actual: <h:inputText  id="currentExist" class="form-control" required="true" requiredMessage="* Campo Obligatorio *" value="#{product.currentExist}"/>
+                        <h:messages for="currentExist"/>
+                    </div>
+                    </div>
+			
+                    <div id="form-row" class="form-row">
+                    <div class="form-group col-md-5">
+                        Existencia Minima: <h:inputText id="minExist" class="form-control" required="true" requiredMessage="* Campo Obligatorio *" value="#{product.minExist}"/>
+                        <h:messages for="minExist"/>
+                    </div>
+                    <div class="form-group col-md-5">
+                        Existencia Maxima: <h:inputText  id="maxExist" class="form-control" required="true" requiredMessage="* Campo Obligatorio *" value="#{product.maxExist}"/>
+                        <h:messages for="maxExist"/>
+                    </div>
+                    </div>
 
-                                <h:outputLabel>Categoria:</h:outputLabel>
+                    <div id="form-row" class="form-row">
+                    <div class="form-group col-md-10">                    
+                        Imagen: <p:fileUpload fileUploadListener="#{fileManageBean.upload}" auto="true" 
+                                        allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="512000" update="msg" id="img"></p:fileUpload>(debe tener el mismo nombre de descripción y ser archivo png)
+                    </div>
+                    </div>
                                 
-                                <h:selectOneMenu class="form-control" value="#{product.category}">
-                                    <f:selectItems var="desc" value="#{categoryController.categories}" itemValue="#{desc.description}" itemLabel="#{desc.description}" />
-                                </h:selectOneMenu>
-                                        <!--
-                                        -->
-				<h:outputLabel>Existencia Actual:</h:outputLabel> <h:inputText value="#{product.currentExist}" id="currentExist" /> <h:message for="currentExist" />
-	
-				<h:outputLabel>Existencia Minima:</h:outputLabel> <h:inputText value="#{product.minExist}" id="minExist" /> <h:message for="minExist" />
-	
-				<h:outputLabel>Existencia Maxima:</h:outputLabel> <h:inputText value="#{product.maxExist}" id="maxExist" 
-									required="true"
-            							requiredMessage="Campo obligatorio."/> 	<h:message for="maxExist" />
-				
-                                
-                                <h:outputLabel>Imagen:</h:outputLabel> 
-                                <p:fileUpload fileUploadListener="#{fileManageBean.upload}" auto="true" 
-                                                    allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="512000" update="msg" id="img"></p:fileUpload>(debe tener el mismo nombre de descripción)
-                                
-                                <h:outputLabel /> <h:commandButton value="Guardar" styleClass="save" action="#{productController.addProduct(product)}"/>
-                                
-                                                   
-     
-                                <p:growl id="msg"></p:growl>
+                    <p:growl id="msg"></p:growl>
+                    
+                    <div id="form-row" class="form-row">
+                        <div class="form-group col-md-5">
+                            <h:commandButton value="Registrar" class="btn btn-primary" action="#{productController.addProduct(product)}"/> 
+                        </div>                     
+                        <div class="form-group col-md-3 text-right">
+                            <h:commandButton immediate="true" value="Volver" action="AdmProducts.xhtml" class="btn btn-primary"/>
+                        </div>
+                    </div>
+                    
 		</h:form>
-
-		<div style="clear: both;"></div>
-
-		<p><h:outputLink value="AdmProducts.xhtml">Regresar al listado</h:outputLink></p>
 
 	</div>	
 	</div>	

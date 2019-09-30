@@ -62,7 +62,7 @@
                 
 		<h:form class="form" enctype="multipart/form-data" >
                     
-                    <div class="form-row">
+                    <div id="form-row" class="form-row">
                         <div class="col-sm-2 col-form-label">Codigo:</div>
                             <div class="form-group col-md-4">
                                 <h:inputText value="#{product.code}" class="form-control" id="code" disabled="true"
@@ -70,7 +70,7 @@
                             </div>
                         <div class="col-sm-6 col-form-label text-danger"><h:message for="code" /></div>
                     </div>
-                    <div class="form-row">
+                    <div id="form-row" class="form-row">
                         <div class="col-sm-2 col-form-label">Descripción:</div>
                             <div class="form-group col-md-4">
                                 <h:inputText value="#{product.description}" class="form-control" id="desc"
@@ -78,7 +78,7 @@
                             </div>
                         <div class="col-sm-6 col-form-label text-danger"><h:message for="desc" /></div>
                     </div>
-                    <div class="form-row">
+                    <div id="form-row" class="form-row">
                         <div class="col-sm-2 col-form-label">Categoría:</div>
                             <div class="form-group col-md-4">
                                 <h:selectOneMenu class="form-control" value="#{product.category}">
@@ -87,7 +87,7 @@
                             </div>
                         <div class="col-sm-6 col-form-label text-danger"><h:message for="cat" /></div>
                     </div>
-                    <div class="form-row">
+                    <div id="form-row" class="form-row">
                         <div class="col-sm-2 col-form-label">Existencia Actual:</div>
                             <div class="form-group col-md-4">
                                 <h:inputText value="#{product.currentExist}" class="form-control" id="current"
@@ -95,7 +95,7 @@
                             </div>
                         <div class="col-sm-6 col-form-label text-danger"><h:message for="current" /></div>
                     </div>
-                    <div class="form-row">
+                    <div id="form-row" class="form-row">
                         <div class="col-sm-2 col-form-label">Existencia Minima</div>
                             <div class="form-group col-md-4">
                                 <h:inputText value="#{product.minExist}" class="form-control" id="min"
@@ -103,7 +103,7 @@
                             </div>
                         <div class="col-sm-6 col-form-label text-danger"><h:message for="min" /></div>
                     </div>
-                    <div class="form-row">
+                    <div id="form-row" class="form-row">
                         <div class="col-sm-2 col-form-label">Existencia Máxima</div>
                             <div class="form-group col-md-4">
                                 <h:inputText value="#{product.maxExist}" class="form-control" id="max"
@@ -111,16 +111,16 @@
                             </div>
                         <div class="col-sm-6 col-form-label text-danger"><h:message for="max" /></div>
                     </div>
-                    <div class="form-row">
+                    <div id="form-row" class="form-row">
                         <div class="col-sm-2 col-form-label">Imagen</div>
                             <div class="form-group col-md-4">
                                 <p:fileUpload fileUploadListener="#{fileManageBean.upload}" auto="true" 
-                                                    allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="512000" update="msg" id="img"></p:fileUpload>(debe tener el mismo nombre de descripción) 
+                                                    allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="512000" update="msg" id="img"></p:fileUpload>(debe tener el mismo nombre de descripción y ser archivo png)
                             <p:growl id="msg"></p:growl>
                             </div>
                         <div class="col-sm-6 col-form-label text-danger"><h:message for="min" /></div>
                     </div>
-                    <div class="form-row">
+                    <div id="form-row" class="form-row">
                         <div class="form-group col-sm-2">
                             <h:commandButton value="Guardar" class="btn btn-primary" action="#{productController.updateProduct(product)}"/>
                         </div>
@@ -132,7 +132,6 @@
 
 		<div style="clear: both;"></div>
 
-		<p><h:outputLink value="AdmProducts.xhtml">Regresar al listado</h:outputLink></p>
         </div>
 	</div>	
 </h:body>
